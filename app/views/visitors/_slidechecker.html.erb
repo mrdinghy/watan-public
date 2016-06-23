@@ -1,0 +1,42 @@
+<section id="fixslides" style="background-color: #000">
+  <div class="container">
+    <div class="row">
+
+      <% @myslides.each do |slide| %>
+
+        <div class="col-sm-3">
+
+         <%= link_to oneslide_path(:slide_id => slide.id) do %> <%= image_tag slide.file.url, :width => "100"%><% end %>
+          <span style="color: #fff"><%= link_to 'Edit', slide %></span>
+        </div>
+
+
+
+
+
+          <% end %>
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
+
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Watan=Syria" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails Devise" %>">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+  </head>
+  <body class="no-trans front-page transparent-header">
+
+  <div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>
+
+  <!-- page wrapper start -->
+  <!-- ================ -->
+  <div class="page-wrapper">
+    <% if params[:controller] == 'visitors' %>
+        <div class="header-container">
+            <header class="header  fixed fixed-before  dark clearfix">
+              <%= render 'layouts/watan_navbar' %>
+              <%#= render 'layouts/b_header' %>
+            </header>
+        </div>
+    <% else %>
+
+              <%= render 'layouts/watan_backbar' %>
+
+
+
+    <% end %>
+
+
+    <main role="main">
+       <%= render 'layouts/messages' %>
+       <%= yield %>
+    </main>
+
+<footer id="footer" class="clearfix ">
+      <%= render 'layouts/footer' %>
+    </footer>
+    <%#= render 'layouts/b_footer' %>
+
+     <script type="text/javascript" src="assets/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+    <script type="text/javascript" src="assets/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;signed_in=true"></script>
+
+  </body>
+</html>

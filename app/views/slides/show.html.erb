@@ -1,0 +1,96 @@
+
+
+
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <div class="col-sm-4">
+
+
+
+
+    <%= image_tag @slide.file.url, :width => "100%", :class => "pull-left" %>
+
+
+
+
+
+  </div>
+
+  <div class="col-sm-8">
+
+
+
+
+
+    <p>
+      <strong>Title:</strong>
+      <%= @slide.title %>
+    </p>
+
+    <p>
+      <strong>Body:</strong>
+      <%= @slide.body %>
+    </p>
+
+    <p>
+      <strong>Watan Program:</strong>
+      <%= @slide.watanprogram.name if @slide.watanprogram_id %>
+    </p>
+
+    <p>
+      <strong>Transition:</strong>
+      <%= @slide.transition.name %>
+    </p>
+
+    <p>
+      <strong>Justify:</strong>
+      <%= @slide.justify %>
+    </p>
+
+    <p>
+      <strong>Imgalt:</strong>
+      <%= @slide.imgalt %>
+    </p>
+
+    <p>
+      <strong>Slotamount:</strong>
+      <%= @slide.slotamount %>
+    </p>
+
+    <p>
+      <strong>Logo:</strong>
+      <%= @slide.logo %>
+    </p>
+
+
+
+
+
+
+    <p>
+      <strong>Institutes:</strong>
+      <% @slide.institutes.each do |institute| %>
+          <%= link_to institute.name, institute %>
+          &nbsp;|&nbsp;
+      <% end %>
+    </p>
+
+
+
+
+    <%= link_to 'Edit', edit_slide_path(@slide) %> |
+    <%= link_to 'Back', slides_path %>
+
+
+
+  </div>
+
+  <div class="col-sm-12">
+
+    <%#= render :partial => 'visitors/singleslide' %>cc
+    </div>
+</div>
+
+
+
+

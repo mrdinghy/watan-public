@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+
+
+
+
+
+<p>
+  <strong>Watan Program Areas:</strong>
+  <% @project.watanprograms.each do |program| %>
+      <%= link_to program.name %>
+      &nbsp;|&nbsp;
+  <% end %>
+</p>
+
+
+<p>
+  <strong>Institutes:</strong>
+  <% @project.institutes.each do |institute| %>
+      <%= link_to institute.name %>
+      &nbsp;|&nbsp;
+  <% end %>
+</p>
+
+
+
+
+
+
+
+
+
+<%= link_to 'Edit', edit_project_path(@project), :class => "btn btn-small btn-primary" %> |
+<%= link_to 'Back', projects_path %>
+<td><%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %></td>

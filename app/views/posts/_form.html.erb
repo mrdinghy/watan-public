@@ -1,0 +1,89 @@
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">Horizontal form</div>
+  <div class="panel-body">
+
+    <%= form_for @post do |form| -%>
+        ...
+        <%= form.file_field :image %>
+        ...
+        <div class="field">
+          <%= form.label :title %><br>
+          <%= form.text_field :title %>
+        </div>
+
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Content</label>
+          <div class="col-sm-10">
+            <%= form.text_area :body, :id => "postbody", :cols => "100", :rows => "15" %>
+          </div>
+        </div>
+
+
+
+
+        <%= form.text_field :published_at, :as => :date_picker, :class => "form-control", :label => false %>
+
+        <h3>Event Info</h3>
+
+        Date
+        <%= form.text_field :event_date, :as => :date_picker, :class => "form-control", :label => false %>
+        Time
+        <%= form.time_select :event_time, :class => "form-control", :label => false %>
+        Location
+        <%= form.text_field :event_location %>
+        Link
+        <%= form.text_field :event_link %>
+
+
+
+        <div class="col-sm-3 chkpanel">
+          <label class="label">Watan Program</label>
+          <div class="row">
+            <%= hidden_field_tag "post[watanprogram_ids][]", nil %>
+            <% Watanprogram.all.each do |program| %>
+                <%= check_box_tag "post[watanprogram_ids][]", program.id,
+                                  @post.watanprogram_ids.include?(program.id), id: dom_id(program) %>
+                <%= label_tag dom_id(program), program.name %><br>
+            <% end %>
+
+          </div>
+        </div>
+
+
+        <div class="col-sm-3 chkpanel">
+          <label class="label">Watan Institute</label>
+          <div class="row">
+            <%= hidden_field_tag "post[institute_ids][]", nil %>
+            <% Institute.all.each do |institute| %>
+                <%= check_box_tag "post[institute_ids][]", institute.id,
+                                  @post.institute_ids.include?(institute.id), id: dom_id(institute) %>
+                <%= label_tag dom_id(institute), institute.name %><br>
+            <% end %>
+
+          </div>
+        </div>
+
+
+
+
+
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+
+        ...
+    <% end %>
+    </div>
+  </div>
+
+
+<script>
+
+    $(function() {
+        $('#postbody').froalaEditor()
+    });
+</script>

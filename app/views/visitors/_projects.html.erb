@@ -1,0 +1,50 @@
+
+<% @projects=Project.all %>
+<!-- section start -->
+<!-- ================ -->
+<section id="projects" class="light-gray-bg pv-20">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center pv-20">
+        <br>
+
+  <h2>Projects</h2>
+  <p>WATAN includes several institutions operating in various fields: humanitarian, charitable, developmental, information, employment, etc.
+    These institutions take it upon themselves to build progress for the Syria of the future. These institutions will start their work outside
+    Syria, but will move into Syria after the victory of the revolution, whence they will contribute to building the new Syria. These institutions are:</p>
+
+  <% @projects.each do |project| %>
+      <div class="col-md-6">
+          <%#= image_tag institute.logo.url, :width => "200", :class => "pull-left" %>
+
+
+
+          <h3><%= project.name %></h3>
+          <p><%= project.description %></p>
+          <td><%= link_to 'Learn more...', project %></td>
+        </div>
+
+  <% end %>
+
+  <br>
+
+
+</div>
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
+<!-- section end -->

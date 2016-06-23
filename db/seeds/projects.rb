@@ -1,0 +1,41 @@
+
+
+
+projects = Project.create([
+                              {name:'Human wrights defenders Support', institute_id: 1, projectstatus_id: 1,  start_date: DateTime.new(2016,1,1,8),  end_date: DateTime.new(2017,12,1,8) },
+                              {name:'Syrian Civil Society Program', institute_id: 1, projectstatus_id: 1,  start_date: DateTime.new(2016,1,1,8),  end_date: DateTime.new(2017,6,30,8) },
+                              {name:'Darat Izza Hub School', institute_id: 3, projectstatus_id: 1,  start_date: DateTime.new(2015,10,1,8),  end_date: DateTime.new(2016,10,1,8) },
+                              {name:'WATAN Conference', institute_id: 1, projectstatus_id: 1,  start_date: DateTime.new(2015,10,8,8),  end_date: DateTime.new(2015,10,11,8) },
+                              {name:'Gaziantep School', institute_id: 3, projectstatus_id: 1,  start_date: DateTime.new(2015,9,15,8),  end_date: DateTime.new(2016,7,30,8) },
+                              {name:'DRR Training', institute_id: 3, projectstatus_id: 1,  start_date: DateTime.new(2015,9,1,8),  end_date: DateTime.new(2015,9,30,8) },
+                              {name:'Livestock Project', institute_id: 2, projectstatus_id: 1,  start_date: DateTime.new(2015,9,1,8),  end_date: DateTime.new(2016,3,30,8) },
+                              {name:'Talbesa School', institute_id: 3, projectstatus_id: 1,  start_date: DateTime.new(2015,9,15,8),  end_date: DateTime.new(2016,6,30,8) },
+                              {name:'Alhoula School', institute_id: 3, projectstatus_id: 5,  start_date: DateTime.new(2015,9,15,8),  end_date: DateTime.new(2016,6,30,8) },
+                              {name:'Reyhanli School', institute_id: 3, projectstatus_id: 8,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2016,6,30,8) },
+                              {name:'Summer Youth Camp (LeAjlekom)', institute_id: 3, projectstatus_id: 3,  start_date: DateTime.new(2015,7,1,8),  end_date: DateTime.new(2015,9,15,8) },
+                              {name:'Magazine', institute_id: 4, projectstatus_id: 5,  start_date: DateTime.new(2015,9,1,8),  end_date: DateTime.new(2016,8,30,8) },
+                              {name:'Summer Youth Camp', institute_id: 3, projectstatus_id: 1,  start_date: DateTime.new(2015,7,5,8),  end_date: DateTime.new(2015,9,15,8) },
+                              {name:'Conflict Sensitivity Workshop', institute_id: 5, projectstatus_id: 1,  start_date: DateTime.new(2015,11,15,8),  end_date: DateTime.new(2015,11,30,8) },
+                              {name:'Conflict Sensitivity Workshop', institute_id: 5, projectstatus_id: 1,  start_date: DateTime.new(2015,10,15,8),  end_date: DateTime.new(2015,10,30,8) },
+                              {name:'Certification of Basic Skills for Professionals', institute_id: 5, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Inside Activists Training Project', institute_id: 5, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Build Societal Capacities', institute_id: 5, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Social Networking and Influencing Audiiences', institute_id: 5, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Block Workshop Project', institute_id: 7, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Health Awareness Project', institute_id: 4, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Printed Newspaper', institute_id: 4, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'SADA Radio', institute_id: 4, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Blankets and Sleeping Bags Project', institute_id: 2, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Bakery Project - Idli', institute_id: 2, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Creative Thinking (SCAMPER)', institute_id: 2, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Food Baskets', institute_id: 2, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Medical Support Project', institute_id: 2, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Freedoms Curriculum Project', institute_id: 7, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Human Rights Training for Staff & Activists', institute_id: 7, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Butterfly Effect Project', institute_id: 3, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Generation Freedom School Project in Atma', institute_id: 3, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Reyhanlı School', institute_id: 3, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Reyhanlı School', institute_id: 3, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) },
+                              {name:'Political Encyclopedia', institute_id: 6, projectstatus_id: 2,  start_date: DateTime.new(2015,1,1,8),  end_date: DateTime.new(2015,12,31,8) }
+
+                          ])

@@ -1,0 +1,62 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </div>
+
+    <div class="col-sm-3 chkpanel">
+      <label class="label">Watan Program</label>
+      <div class="row">
+        <%= hidden_field_tag "project[watanprogram_ids][]", nil %>
+        <% @watanprogram_list.all.each do |program| %>
+            <%= check_box_tag "project[watanprogram_ids][]", program.id,
+                              @project.watanprogram_ids.include?(program.id), id: dom_id(program) %>
+            <%= label_tag dom_id(program), program.name %><br>
+        <% end %>
+
+      </div>
+    </div>
+
+
+    <div class="col-sm-3 chkpanel">
+      <label class="label">Watan Institute</label>
+      <div class="row">
+        <%= hidden_field_tag "project[institute_ids][]", nil %>
+        <% @institute_list.all.each do |institute| %>
+            <%= check_box_tag "project[institute_ids][]", institute.id,
+                              @project.institute_ids.include?(institute.id), id: dom_id(institute) %>
+            <%= label_tag dom_id(institute), institute.name %><br>
+        <% end %>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

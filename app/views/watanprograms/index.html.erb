@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Watanprograms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @watanprograms.each do |watanprogram| %>
+      <tr>
+        <td><%= watanprogram.name %></td>
+        <td><%= link_to 'Show', watanprogram %></td>
+        <td><%= link_to 'Edit', edit_watanprogram_path(watanprogram) %></td>
+        <td><%= link_to 'Destroy', watanprogram, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Watanprogram', new_watanprogram_path %>

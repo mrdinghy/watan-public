@@ -1,0 +1,141 @@
+
+
+
+<div class="row" style="background-color: #fff">
+  <div class="col-sm-6">Here we go</div>
+  <div class="col-sm-6 <%= I18n.locale.to_s %> <%= @divright %>">
+<span style="font-size: 16px">
+    <span style="color: #ccc">Language:</span>
+  <%= link_to_unless_current "English", locale: "en" %><%= link_to_unless_current "العربية", locale: "ar" %>
+</span>
+  </div>
+</div>
+
+
+
+<div class="container">
+
+
+
+
+
+
+  <div class="row">
+    <div class="col-md-3  hidden-xs ">
+      <!-- header-left start -->
+      <!-- ================ -->
+      <div class="header-left clearfix">
+
+        <!-- logo -->
+        <div id="logo" class="logo">
+          <a href="#banner">      <%= image_tag("logo PNG_white_60.png", alt: "Watan Syria") %></a>
+        </div>
+
+        <!-- name-and-slogan -->
+            </div>
+      <!-- header-left end -->
+
+    </div>
+    <div class="col-md-9">
+
+      <!-- header-right start -->
+      <!-- ================ -->
+      <div class="header-right clearfix">
+        <!-- main-navigation start -->
+        <!-- classes: -->
+        <!-- "onclick": Makes the dropdowns open on click, this the default bootstrap behavior e.g. class="main-navigation onclick" -->
+        <!-- "animated": Enables animations on dropdowns opening e.g. class="main-navigation animated" -->
+        <!-- "with-dropdown-buttons": Mandatory class that adds extra space, to the main navigation, for the search and cart dropdowns -->
+        <!-- ================ -->
+        <div class="main-navigation animated">
+
+          <!-- navbar start -->
+          <!-- ================ -->
+          <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+
+              <!-- Toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+
+                <!-- header-left start -->
+                <!-- ================ -->
+                <div class="header-left clearfix  visible-xs ">
+
+                  <!-- logo -->
+                  <div id="logo-mobile" class="logo">
+                    <a href="index.html"><img id="logo-img-mobile" src="images/logo_light_blue.png" alt="The Project"></a>
+                  </div>
+
+                  <!-- name-and-slogan -->
+                  <div class="site-slogan hidden-xs">
+                    Multipurpose HTML5 Template
+                  </div>
+
+                </div>
+                <!-- header-left end -->
+
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                  <li><a href="#banner">Home</a>
+
+
+
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#news">News</a></li>
+
+                  <li><a href="#institutes">Institutes</a></li>
+
+
+                  <li><a href="#projects">Projects</a></li>
+                 <!--- <li><a href="#portfolio">Campaigns</a></li>--->
+                  <li><a href="#support">Support</a></li>
+
+
+
+                  <li><a href="#footer">Contact</a></li>
+
+
+                  <li class="dropdown ">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Watan In-Depth</a>
+                    <ul class="dropdown-menu">
+                      <li ><%= link_to 'News and Events', posts_path  %></li>
+                      <li ><%= link_to 'Institutes', projects_path  %></li>
+                        <li ><%= link_to 'Projects', projects_path  %></li>
+                      <li ><%= link_to 'Campaigns', projects_path  %></li>
+                    </ul>
+                  </li>
+
+
+
+
+
+
+
+
+
+
+                </ul>
+              </div>
+
+            </div>
+          </nav>
+          <!-- navbar end -->
+
+        </div>
+        <!-- main-navigation end -->
+      </div>
+      <!-- header-right end -->
+
+    </div>
+  </div>
+</div>

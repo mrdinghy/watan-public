@@ -1,0 +1,138 @@
+
+
+
+
+<% pxlist= '' %>
+<% (10..500).step(10) do |n| %>
+
+    <% if n != 500 %>
+            <% px = n.to_s + ',' %>
+    <% else %>
+            <% px = n.to_s %>
+    <% end %>
+    <% pxlist = pxlist + px %>
+<% end %>
+
+
+
+
+
+<%= form_for(@slide) do |f| %>
+  <% if @slide.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@slide.errors.count, "error") %> prohibited this slide from being saved:</h2>
+
+      <ul>
+      <% @slide.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= f.file_field :file %>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div>
+    <div class="field">
+      <%= f.label :imgalt %><br>
+      <%= f.text_field :imgalt %>
+    </div>
+
+
+
+
+
+  <div class="field">
+    <%= f.label 'Watan Program' %><br>
+    <%= f.collection_select(:watanprogram_id, Watanprogram.all, :id, :name, include_blank: true, :class => "form-control") %>
+
+  </div>
+  <div class="field">
+    <%= f.label :transition %><br>
+    <%= f.number_field :transition %>
+  </div>
+
+    <p>
+      <b>Justify</b><br />
+      <%= f.radio_button :justify, 'left' %> Left<br />
+      <%= f.radio_button :justify, 'right' %> Right<br />
+      </p>
+
+
+
+
+
+
+
+  <div class="field">
+    <%= f.label 'Top line start' %><br>
+    <%= f.number_field :topline %>
+  </div>
+
+
+
+
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Slide text</label>
+      <div class="col-sm-10">
+        <%= f.text_area :blurb, :id => "slideblurb", :cols => "100", :rows => "15" %>
+      </div>
+    </div>
+
+
+
+
+    <div class="field">
+      <%= f.label 'number of lines ' %><br>
+      <%= f.number_field :blurblines %>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="field">
+    <%= f.label :logo %><br>
+
+    <%= f.text_field :logo %>
+  </div>
+
+
+
+
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<div class="col-sm-3 chkpanel">
+  <label class="label">Watan Institute</label>
+  <div class="row">
+    <%= hidden_field_tag "slide[institute_ids][]", nil %>
+    <% Institute.all.each do |institute| %>
+        <%= check_box_tag "slide[institute_ids][]", institute.id,
+                          @slide.institute_ids.include?(institute.id), id: dom_id(institute) %>
+        <%= label_tag dom_id(institute), institute.name %><br>
+    <% end %>
+
+  </div>
+</div>
+
+<script>
+
+    $(function() {
+        $('#slideblurb').froalaEditor()
+    });
+</script>
