@@ -20,4 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  navbar:
+    home: "Home"
+    about: "About"
+    support: "Support"
+    news: "News"
+    institutes: "Institutes"
+    projects: "Projects"
+    contact: "Contact"
+    indepth: "Watan In-Depth"

@@ -9,7 +9,7 @@
   <h2><%= @donatepage.title %></h2>
 
   <div class="col-md-6">
-    <%= @donatepage.body.html_safe %>
+    <%= @donatepage.body.html_safe if @donatepage.body %>
   </div>
   <div class="col-md-6">
     <a href="" class="btn btn-success">Donate Now!</a>
@@ -33,7 +33,7 @@
   <h2><%= @membershippage.title %></h2>
 
   <div class="col-md-6">
-    <%= @membershippage.body.html_safe %>
+    <%= @membershippage.body.html_safe if @membershippage.body %>
   </div>
   <div class="col-md-6">
     <a href="" class="btn btn-success">Become a Watan Member!</a>
