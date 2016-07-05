@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :countries
+  resources :details
   resources :watanprograms
   resources :members
   resources :slides
@@ -20,4 +22,10 @@ Rails.application.routes.draw do
   get 'oneslide', to: 'visitors#oneslide', as: 'oneslide'
   get 'membership', to: 'visitors#membership', as: 'membership'
   get 'donate', to: 'visitors#donate', as: 'donate'
+
+  get 'allprojects', to: 'details#showprojects', as: 'allprojects'
+  get 'allposts', to: 'details#showposts', as: 'allposts'
+
+  get 'khayr', to: 'khayr#index', as: 'khayr'
+
 end

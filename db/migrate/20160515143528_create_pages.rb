@@ -1,8 +1,8 @@
 class CreatePages < ActiveRecord::Migration
   def up
     create_table :pages do |t|
-      t.string :title
-      t.text :body
+      t.string :pagelocation
+
       t.boolean :publish
       t.timestamps null: false
     end

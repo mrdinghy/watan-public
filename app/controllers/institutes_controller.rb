@@ -10,7 +10,9 @@ class InstitutesController < ApplicationController
   # GET /institutes/1
   # GET /institutes/1.json
   def show
-    @projects = Project.where('institute_id=?', @institute.id)
+    @projects = InstitutesProject.where('institute_id=?', @institute.id)
+    @posts = InstitutesPost.where('institute_id=?', @institute.id)
+
   end
 
   # GET /institutes/new

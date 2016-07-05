@@ -1,4 +1,15 @@
-<%= form_for(@project) do |f| %>
+
+
+<div class="panel-body">
+  <div  class="form-horizontal">
+
+
+
+
+
+
+
+  <%= form_for(@project) do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -11,17 +22,62 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
 
-    <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_area :description %>
-    </div>
+        <div class="form-group">
+          <%= f.label :name, :class => "col-sm-2 control-label" %>
+          <div class="col-sm-10">
+            <%= f.text_field :name, :class => "form-control" %>
 
-    <div class="col-sm-3 chkpanel">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :description, :class => "col-sm-2 control-label" %>
+          <div class="col-sm-10">
+            <%= f.text_area :description, :id => "projectdesc", :cols => "100", :rows => "15", :class => "form-control" %>
+
+          </div>
+        </div>
+
+
+
+        <div class="form-group">
+          <%= f.label 'Current Logo', :class => "col-sm-2 control-label" %>
+          <div class="col-sm-4">
+            <%= image_tag @project.image.url, :width => "100%", :class => "pull-left" %>
+
+          </div>
+          <%= f.label 'Replace', :class => "col-sm-2 control-label" %>
+          <div class="col-sm-4">
+            <%= f.file_field :image, :class => "form-control" %>
+          </div>
+        </div>
+
+
+
+        <div class="form-group">
+          <%= f.label :start_date, :class => "col-sm-2 control-label" %>
+          <div class="col-sm-10">
+            <%= f.text_field :start_date, :as => :date_picker, :class => "form-control", :label => false %>
+
+
+
+            <div class="form-group">
+              <%= f.label :end_date, :class => "col-sm-2 control-label" %>
+              <div class="col-sm-10">
+                <%= f.text_field :end_date, :as => :date_picker, :class => "form-control", :label => false %>
+
+
+                <div class="field">
+                  <%= f.label 'Country Location' %><br>
+                  <%= f.collection_select(:country_id, Country.all, :id, :name, include_blank: true, :class => "form-control") %>
+
+                </div>
+
+
+
+
+                <div class="col-sm-3 chkpanel">
       <label class="label">Watan Program</label>
       <div class="row">
         <%= hidden_field_tag "project[watanprogram_ids][]", nil %>
@@ -60,3 +116,12 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>
+    </div>
+
+    <script>
+
+        $(function() {
+            $('#projectdesc').froalaEditor()
+        });
+    </script>

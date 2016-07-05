@@ -10,6 +10,9 @@ class WatanprogramsController < ApplicationController
   # GET /watanprograms/1
   # GET /watanprograms/1.json
   def show
+    @projects = ProjectsWatanprogram.where('watanprogram_id = ?', @watanprogram.id)
+    @posts = PostsWatanprogram.where('watanprogram_id = ?', @watanprogram.id)
+
   end
 
   # GET /watanprograms/new
@@ -69,6 +72,6 @@ class WatanprogramsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def watanprogram_params
-      params.require(:watanprogram).permit(:name)
+      params.require(:watanprogram).permit(:name, :body)
     end
 end

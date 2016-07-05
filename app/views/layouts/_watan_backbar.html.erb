@@ -1,5 +1,25 @@
 <% institutes = Institute.all %>
 
+
+
+
+<div class="row" style="background-color: #fff">
+  <div class="col-sm-6">Here we go</div>
+  <div class="col-sm-6 <%= I18n.locale.to_s %> <%= @divright %>">
+<span style="font-size: 16px">
+    <span style="color: #ccc">Language:</span>
+   <span style="font-size: 18px; font-weight:bold"> <%= link_to_unless_current "English", locale: "en" %></span> &nbsp;&nbsp;&nbsp;
+      <span style="font-size: 18px; font-weight:bold"> <%= link_to_unless_current "العربية", locale: "ar" %></span>
+</span>
+  </div>
+</div>
+
+
+
+
+
+
+
 <!-- header-container start -->
 <div class="header-container">
 
@@ -71,7 +91,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-md-3 ">
+        <div class="col-md-2 ">
           <!-- header-left start -->
           <!-- ================ -->
           <div class="header-left clearfix">
@@ -84,14 +104,14 @@
 
             <!-- name-and-slogan -->
             <div class="site-slogan">
-              Multipurpose HTML5 Template
+
             </div>
 
           </div>
           <!-- header-left end -->
 
         </div>
-        <div class="col-md-9">
+        <div class="col-md-10">
 
           <!-- header-right start -->
           <!-- ================ -->
@@ -128,7 +148,8 @@
 
                       <!-- mega-menu start -->
                       <li><%= link_to 'Home', root_path %></li>
-                      <li><%= link_to 'News and Events', posts_path %></li>
+
+                      <li><%= link_to 'News', allposts_path %></li>
                       <!-- mega-menu end -->
                       <!-- mega-menu start -->
                       <!-- mega-menu end -->
@@ -161,7 +182,7 @@
                       </li>
 
 
-                      <li><%= link_to 'Projects', projects_path %></li>
+                      <li><%= link_to 'Projects', allprojects_path %></li>
 
                       <!-- mega-menu start -->
                       <li class="dropdown  mega-menu narrow">
@@ -188,6 +209,8 @@
                                       <li ><%= link_to 'Slides', slides_path %></li>
                                       <li ><%= link_to 'Projects', projects_path %></li>
                                       <li ><%= link_to 'Program Areas', watanprograms_path %></li>
+                                      <li ><%= link_to 'Countries', countries_path %></li>
+
 
                                     </ul>
                                   </div>

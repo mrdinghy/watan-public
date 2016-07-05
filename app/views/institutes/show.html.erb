@@ -23,11 +23,15 @@
       <div class="col-lg-5">
         <h3><%= @institute.name %> Projects</h3>
         <% @projects.each do |p| %>
-            <%= link_to p.name, p %><br><br>
+            <%= link_to p.project.name, p.project %><br><br>
 
         <% end %>
 
+        <h3><%= @institute.name %> News</h3>
+        <% @posts.each do |i| %>
+            <%= link_to i.post.title, i.post %><br><br>
 
+        <% end %>
     </div>
 
 

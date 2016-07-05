@@ -6,7 +6,8 @@
   <div class="col-sm-6 <%= I18n.locale.to_s %> <%= @divright %>">
 <span style="font-size: 16px">
     <span style="color: #ccc">Language:</span>
-  <%= link_to_unless_current "English", locale: "en" %><%= link_to_unless_current "العربية", locale: "ar" %>
+   <span style="font-size: 18px; font-weight:bold"> <%= link_to_unless_current "English", locale: "en" %></span> &nbsp;&nbsp;&nbsp;
+      <span style="font-size: 18px; font-weight:bold"> <%= link_to_unless_current "العربية", locale: "ar" %></span>
 </span>
   </div>
 </div>
@@ -14,8 +15,6 @@
 
 
 <div class="container">
-
-
 
 
 
@@ -86,20 +85,67 @@
               <div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
 
-                  <li>
-                  <%= link_to root_path do %><%= t "navbar.home" %><% end %>
+                  <li><a href="#"><%= t "navbar.home" %></a></li>
+                <li><a href="#about"><%= t "navbar.about" %></a></li>
+                  <li><a href="#news"><%= t "navbar.news" %></a></li>
+
+
+
+
+                  <li class="dropdown  mega-menu narrow">
+                    <a href="#programs" class="dropdown-toggle" data-toggle="dropdown"><strong>Programs</strong></a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h4 class="title"><i class="fa fa-magic pr-10"></i> Watan Program Areas</h4>
+                            <div class="row">
+
+                              <div class="col-sm-6">
+                                <div class="divider"></div>
+                                <ul class="menu">
+
+                                  <% @allprograms.each do |program| %>
+
+                                      <li><a href="#prgm-<%= program.id %>"><%= program.name %></a></li>
+
+
+                                <% end %>
+
+                                </ul>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="divider"></div>
+                                <ul class="menu">
+
+
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
                   </li>
 
 
 
-                  <li><a href="#about"><%= t "navbar.about" %></a></li>
-                  <li><a href="#news"><%= t "navbar.news" %></a></li>
-
-                  <li><a href="#institutes"><%= t "navbar.institutes" %></a></li>
 
 
-                  <li><a href="#projects"><%= t "navbar.projects" %></a></li>
-                 <!--- <li><a href="#portfolio">Campaigns</a></li>--->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                   <li><a href="#support"><%= t "navbar.support" %></a></li>
 
 
@@ -110,10 +156,10 @@
                   <li class="dropdown ">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= t "navbar.indepth" %></a>
                     <ul class="dropdown-menu">
-                      <li ><%= link_to 'News and Events', posts_path  %></li>
-                      <li ><%= link_to 'Institutes', projects_path  %></li>
-                        <li ><%= link_to 'Projects', projects_path  %></li>
-                      <li ><%= link_to 'Campaigns', projects_path  %></li>
+                      <li ><%= link_to 'News and Events', allposts_path  %></li>
+                      <li ><%= link_to 'Institutes', institutes_path  %></li>
+                        <li ><%= link_to 'Projects', allprojects_path  %></li>
+                      <li ><%#= link_to 'Campaigns', projects_path  %></li>
                     </ul>
                   </li>
 

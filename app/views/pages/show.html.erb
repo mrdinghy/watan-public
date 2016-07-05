@@ -10,7 +10,7 @@
 
 <p>
   <strong>Body:</strong>
-  <%= @page.body.html_safe %>
+  <%= @page.body.html_safe if @page.body %>
 </p>
 
 

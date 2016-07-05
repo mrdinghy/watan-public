@@ -68,10 +68,11 @@
 
       <hr>
 
+
       <p>
         <strong>Watan Program Areas:</strong>
-        <% @postprograms.each do |program| %>
-            <%= link_to program.watanprogram.name, program.watanprogram %>
+        <% @post.watanprograms.each do |program| %>
+            <%= link_to program.name, program %>
             &nbsp;|&nbsp;
         <% end %>
       </p>
@@ -79,18 +80,41 @@
 
       <p>
         <strong>Institutes:</strong>
-        <% @postinstitutes.each do |institute| %>
-            <%= link_to institute.institute.name %>
+        <% @post.institutes.each do |institute| %>
+            <%= link_to institute.name, institute %>
             &nbsp;|&nbsp;
         <% end %>
       </p>
 
-      <!-- Blog Comments -->
+      <% if @post.is_event %>
 
 
-      <!-- Posted Comments -->
+          <p>
+            <strong>Date:</strong>
+
+            <% @post.event_date %>
+          </p>
 
 
+          <p>
+            <strong>Time:</strong>
+            <% @post.event_time %>
+          </p>
+          <p>
+            <strong>Location:</strong>
+            <% @post.event_location %>
+          </p>
+
+
+          <p>
+            <strong>Link:</strong>
+            <% @post.event_link %>
+          </p>
+
+
+
+
+    <% end %>
 
 
 

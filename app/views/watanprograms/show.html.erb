@@ -1,9 +1,67 @@
-<p id="notice"><%= notice %></p>
 
-<p>
+
+
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <!-- Page Heading/Breadcrumbs -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header"><%= @watanprogram.name %>
+        <small></small>
+      </h1>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <!-- Content Row -->
+  <div class="row">
+
+    <!-- Blog Post Content Column -->
+    <div class="col-lg-7">
+
+    <p>
   <strong>Name:</strong>
   <%= @watanprogram.name %>
 </p>
-
+<p>
+  <strong>Description:</strong>
+  <%= @watanprogram.body.html_safe if @watanprogram.body %>
+</p>
 <%= link_to 'Edit', edit_watanprogram_path(@watanprogram) %> |
 <%= link_to 'Back', watanprograms_path %>
+</div>
+
+
+
+    <div class="col-lg-5">
+      <h3><%= @watanprogram.name %> Projects</h3>
+      <% @projects.each do |p| %>
+          <%= link_to p.project.name, p.project %><br><br>
+
+      <% end %>
+
+
+    </div>
+
+
+
+
+    <div class="col-lg-5">
+      <h3>Related News</h3>
+      <% @posts.each do |p| %>
+          <%= link_to p.post.title, p.post %><br><br>
+
+      <% end %>
+
+
+    </div>
+
+
+
+
+
+
+
+
+  </div>
+    </div>

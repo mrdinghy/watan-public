@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621231720) do
+ActiveRecord::Schema.define(version: 20160703141207) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "commentable_id"
@@ -29,6 +29,23 @@ ActiveRecord::Schema.define(version: 20160621231720) do
 
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "countries", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "country_translations", force: :cascade do |t|
+    t.integer  "country_id", null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.text     "body"
+  end
+
+  add_index "country_translations", ["country_id"], name: "index_country_translations_on_country_id"
+  add_index "country_translations", ["locale"], name: "index_country_translations_on_locale"
 
   create_table "institute_translations", force: :cascade do |t|
     t.integer  "institute_id", null: false
@@ -105,11 +122,10 @@ ActiveRecord::Schema.define(version: 20160621231720) do
   add_index "page_translations", ["page_id"], name: "index_page_translations_on_page_id"
 
   create_table "pages", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
+    t.string   "pagelocation"
     t.boolean  "publish"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "pixels", force: :cascade do |t|
@@ -175,8 +191,12 @@ ActiveRecord::Schema.define(version: 20160621231720) do
     t.integer  "priority_id"
     t.integer  "assigned_to"
     t.integer  "country_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "projects_watanprograms", force: :cascade do |t|
@@ -281,12 +301,14 @@ ActiveRecord::Schema.define(version: 20160621231720) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "name"
+    t.text     "body"
   end
 
   add_index "watanprogram_translations", ["locale"], name: "index_watanprogram_translations_on_locale"
   add_index "watanprogram_translations", ["watanprogram_id"], name: "index_watanprogram_translations_on_watanprogram_id"
 
   create_table "watanprograms", force: :cascade do |t|
+    t.string   "pgrmcode"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -15,7 +15,11 @@
     <%= csrf_meta_tags %>
 
   </head>
-  <body class="no-trans front-page transparent-header">
+  <% if params[:controller] == 'visitors' %>
+  <body class="no-trans front-page transparent-header" onload="document.refresh();">
+    <% else %>
+    <body class="no-trans front-page transparent-header"">
+<% end %>
 
   <div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>
 
@@ -40,6 +44,7 @@
 
     <main role="main">
        <%= render 'layouts/messages' %>
+
        <%= yield %>
     </main>
 

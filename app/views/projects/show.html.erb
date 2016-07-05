@@ -1,40 +1,99 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
 
 
 
 
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <!-- Page Heading/Breadcrumbs -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header"><%= @project.name %>
+        <small></small>
+      </h1>
 
-
-<p>
-  <strong>Watan Program Areas:</strong>
-  <% @project.watanprograms.each do |program| %>
-      <%= link_to program.name %>
-      &nbsp;|&nbsp;
-  <% end %>
-</p>
-
-
-<p>
-  <strong>Institutes:</strong>
-  <% @project.institutes.each do |institute| %>
-      <%= link_to institute.name %>
-      &nbsp;|&nbsp;
-  <% end %>
-</p>
+    </div>
+  </div>
+  <!-- /.row -->
 
 
 
+  <!-- Content Row -->
+  <div class="row">
+
+    <!-- Blog Post Content Column -->
+    <div class="col-lg-8">
+
+
+
+      <%= image_tag @project.image.url, :width => "100%", :class => "pull-left" %>
+
+
+
+
+      <p>
+
+        <%= @project.description.html_safe if @project.description %>
+      </p>
+
+
+
+
+          <p>
+            <strong>Project Start:</strong>
+            <%= @project.start_date %>
+          </p>
+
+      <p>
+        <strong>Project End:</strong>
+        <%= @project.end_date %>
+      </p>
+
+      <p>
+        <strong>Project Location:</strong>
+        <%= @project.country.name if @project.country_id %>
+      </p>
+
+      <hr>
+
+
+      <p>
+        <strong>Related Projects:</strong>
+        <% @project.watanprograms.each do |program| %>
+            <%= link_to program.name, program %>
+            &nbsp;|&nbsp;
+        <% end %>
+      </p>
+
+
+      <p>
+        <strong>Institutes:</strong>
+        <% @project.institutes.each do |institute| %>
+            <%= link_to institute.name, institute %>
+            &nbsp;|&nbsp;
+        <% end %>
+      </p>
+
+      <!-- Blog Comments -->
+
+
+      <!-- Posted Comments -->
+
+
+
+
+
+      <%= link_to 'Edit', edit_project_path(@project), :class => "btn btn-small btn-primary" %> |
+      <%= link_to 'Back', projects_path %>
+
+    </div>
 
 
 
 
 
 
-<%= link_to 'Edit', edit_project_path(@project), :class => "btn btn-small btn-primary" %> |
-<%= link_to 'Back', projects_path %>
-<td><%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+
+
+

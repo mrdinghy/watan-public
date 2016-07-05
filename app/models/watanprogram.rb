@@ -1,5 +1,5 @@
 class Watanprogram < ActiveRecord::Base
-  translates :name
+  translates :name, :body
   has_many :slides
 
 

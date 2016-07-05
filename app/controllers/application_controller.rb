@@ -20,6 +20,6 @@ class ApplicationController < ActionController::Base
   end
 
 
-
-
+  #@contactpage = Page.find(5)
+  before_action :authenticate_user!
 end
