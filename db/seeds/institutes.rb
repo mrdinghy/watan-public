@@ -1,8 +1,12 @@
 
+# /home/engineerx/watan-public/
+# home/smetzger/RubymineProjects/theproject/
+
+
 i1 = Institute.create({name: 'Watan',description:
 'WATAN includes several institutions operating in various fields: humanitarian, charitable, developmental, information, employment, etc. These institutions take it upon themselves to build progress for the Syria of the future. These institutions will start their work outside Syria, but will move into Syria after the victory of the revolution, whence they will contribute to building the new Syria. These institutions are:'
                   })
-i1.logo = File.open('/home/smetzger/RubymineProjects/theproject/app/assets/images/logo1.png')
+i1.logo = File.open('/home/engineerx/watan-public/app/assets/images/logo1.png')
 i1.save!
 
 
@@ -24,7 +28,7 @@ i2 = Institute.create({name: 'Khayr', description: '
 '
 
                   })
-i2.logo = File.open('/home/smetzger/RubymineProjects/theproject/app/assets/images/khayr_head.png')
+i2.logo = File.open('/home/engineerx/watan-public/app/assets/images/khayr_head.png')
 i2.save!
 
 i3 = Institute.create({name: 'Generation Freedom',description: '
@@ -47,7 +51,7 @@ i3 = Institute.create({name: 'Generation Freedom',description: '
 '
 
                   })
-i3.logo = File.open('/home/smetzger/RubymineProjects/theproject/app/assets/images/gf_head.png')
+i3.logo = File.open('/home/engineerx/watan-public/app/assets/images/gf_head.png')
 i3.save!
 
 i4 = Institute.create({name: 'SADA', description: '
@@ -64,7 +68,7 @@ i4 = Institute.create({name: 'SADA', description: '
 '
 
                   })
-i4.logo = File.open('/home/smetzger/RubymineProjects/theproject/app/assets/images/sd.png')
+i4.logo = File.open('/home/engineerx/watan-public/app/assets/images/sd.png')
 i4.save!
 
 i5 = Institute.create({name: 'Syan', description: '
@@ -83,7 +87,7 @@ i5 = Institute.create({name: 'Syan', description: '
 '
 
                   })
-i5.logo = File.open('/home/smetzger/RubymineProjects/theproject/app/assets/images/syan_head.png')
+i5.logo = File.open('/home/engineerx/watan-public/app/assets/images/syan_head.png')
 i5.save!
 
 i6 = Institute.create({name: 'Syrian ِCentre for Studies & Research (Dirisat)', description: '
@@ -98,7 +102,7 @@ i6 = Institute.create({name: 'Syrian ِCentre for Studies & Research (Dirisat)',
 '
 
                   })
-i6.logo = File.open('/home/smetzger/RubymineProjects/theproject/app/assets/images/dr.png')
+i6.logo = File.open('/home/engineerx/watan-public/app/assets/images/dr.png')
 i6.save!
 
 i7 = Institute.create({name: 'Horiat', description: '
@@ -117,7 +121,7 @@ i7 = Institute.create({name: 'Horiat', description: '
 '
 
                   })
-i7.logo = File.open('/home/smetzger/RubymineProjects/theproject/app/assets/images/hori.png')
+i7.logo = File.open('/home/engineerx/watan-public/app/assets/images/hori.png')
 i7.save!
 
 i8 = Institute.create({name: 'Syrian Business Council', description: '
@@ -144,5 +148,5 @@ i8 = Institute.create({name: 'Syrian Business Council', description: '
 
 '
                   })
-i8.logo = File.open('/home/smetzger/RubymineProjects/theproject/app/assets/images/sbc_.png')
+i8.logo = File.open('/home/engineerx/watan-public/app/assets/images/sbc_.png')
 i8.save!
