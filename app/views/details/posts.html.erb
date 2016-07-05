@@ -1,0 +1,38 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-left pv-20">
+      <br>
+
+      <h2>Watan News</h2>
+    
+
+      <% @allposts.each do |post| %>
+          <% thisimg = @imgArray.sample %>
+          <%#= image_tag institute.logo.url, :width => "200", :class => "pull-left" %>
+          <div class="row">
+            <hr>
+            <div class="col-sm-2" style="padding: 5px">
+              <%= image_tag(thisimg, :width => "100%", alt: "Watan Syria") %>
+            </div>
+            <div class="col-sm-7">
+
+              <h3><%= link_to post.title, post %></h3>
+              <small><%= post.published_at %></small>
+              <p><%= post.body.html_safe if post.body %></p>
+              <%= link_to 'Learn more...', post %>
+            </div>
+            <div class="sm-3">
+
+            </div>
+          </div>
+      <% end %>
+
+      <br>
+
+
+    </div>
+
+  </div>
+</div>

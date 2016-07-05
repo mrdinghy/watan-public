@@ -1,0 +1,66 @@
+<section id="programs" class="light-gray-bg pv-20">
+  <div class="container">
+
+
+
+  <h2 class="page-title">Watan Programs</h2>
+  <div class="separator-2 mb-20"></div>
+
+
+
+    <% @allprograms.each do |program| %>
+
+    <% thisimg = @imgArray.sample %>
+
+<% programprojects = ProjectsWatanprogram.where('watanprogram_id = ?', program.id) %>
+<% programposts = PostsWatanprogram.where('watanprogram_id = ?', program.id) %>
+<section id="prgm-<%= program.id %>" class="light-gray-bg pv-20">
+  <div class="container">
+    <div class="row" style="background-color: #bce8f1; padding: 15px">
+
+      <div class="col-sm-4">
+        <%= image_tag(thisimg, :width => "100%", alt: "Watan Syria") %>
+
+      </div>
+      <div class="col-md-5 pv-20">
+
+<H3><%= program.name %></H3>
+
+<p><%= program.body.html_safe if program.body %></p>
+</div>
+
+      <div class="col-md-3" style="background-color: #fff">
+        Related Projects
+      <strong><ul>
+        <% programprojects.each do |p| %>
+              <li><%= link_to p.project.name, p.project %></li>
+
+
+        <% end %>
+      </ul>
+      </strong>
+<hr>
+        Related News and Events
+        <strong><ul>
+          <% programposts.each do |n| %>
+              <li><%= link_to n.post.title, n.post %></li>
+
+
+          <% end %>
+        </ul>
+        </strong>
+
+
+      </div>
+
+      </div>
+
+
+    </div>
+
+</section>
+<!-- section end -->
+
+<% end %>
+</div>
+    </section>
