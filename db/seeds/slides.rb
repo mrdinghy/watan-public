@@ -1,4 +1,11 @@
 
+
+
+# /home/engineerx/watan-public/
+# home/engineerx/watan-public/
+
+
+
 u = Slide.new(title: 'Generation Freedom School in Qah Camp', body: 'this is a text of the slide seeder',
                watanprogram_id: 1, transition_id: 1, justify: 'left', topline: 100, blurblines: 4,
                blurb: '  We strive to develop individuals and society through a group of
@@ -7,7 +14,7 @@ u = Slide.new(title: 'Generation Freedom School in Qah Camp', body: 'this is a t
                   wherever Syrian communities exist. We focus on nation building and developmental projects.',
                )
 
-u.file = File.open('/home/smetzger/RubymineProjects/theproject/app/assets/images/img_camera.jpg')
+u.file = File.open('/home/engineerx/watan-public/app/assets/images/img_camera.jpg')
 u.save!
 
 
@@ -18,7 +25,7 @@ u = Slide.new(title: 'Orphans Sponsorship', body: 'this is a text of the slide s
                   We aim to establish our presence throughout Syria, in all its provinces, and
                   wherever Syrian communities exist. We focus on nation building and developmental projects.')
 
-u.file = File.open('/home/smetzger/RubymineProjects/theproject/app/assets/images/img_boydust.jpg')
+u.file = File.open('/home/engineerx/watan-public/app/assets/images/img_boydust.jpg')
 u.save!
 
 u = Slide.new(title: 'Psychological Support Unit', body: 'this is a text of the slide seeder',
@@ -28,7 +35,7 @@ u = Slide.new(title: 'Psychological Support Unit', body: 'this is a text of the 
                   We aim to establish our presence throughout Syria, in all its provinces, and
                   wherever Syrian communities exist. We focus on nation building and developmental projects.')
 
-u.file = File.open('/home/smetzger/RubymineProjects/theproject/app/assets/images/img_soccer.jpg')
+u.file = File.open('/home/engineerx/watan-public/app/assets/images/img_soccer.jpg')
 u.save!
 
 u = Slide.new(title: 'Generation Freedom Cultural Center', body: 'this is a text of the slide seeder',
@@ -38,7 +45,7 @@ u = Slide.new(title: 'Generation Freedom Cultural Center', body: 'this is a text
                   We aim to establish our presence throughout Syria, in all its provinces, and
                   wherever Syrian communities exist. We focus on nation building and developmental projects.')
 
-u.file = File.open('/home/smetzger/RubymineProjects/theproject/app/assets/images/img_circle.jpg')
+u.file = File.open('/home/engineerx/watan-public/app/assets/images/img_circle.jpg')
 u.save!
 
 u = Slide.new(title: 'Cultivating Growth', body: 'this is a text of the slide seeder',
@@ -48,7 +55,7 @@ u = Slide.new(title: 'Cultivating Growth', body: 'this is a text of the slide se
                   We aim to establish our presence throughout Syria, in all its provinces, and
                   wherever Syrian communities exist. We focus on nation building and developmental projects.')
 
-u.file = File.open('/home/smetzger/RubymineProjects/theproject/app/assets/images/img_flowers.jpg')
+u.file = File.open('/home/engineerx/watan-public/app/assets/images/img_flowers.jpg')
 u.save!
 
 u = Slide.new(title: 'Let me In', body: 'this is a text of the slide seeder',
@@ -58,5 +65,5 @@ u = Slide.new(title: 'Let me In', body: 'this is a text of the slide seeder',
                   We aim to establish our presence throughout Syria, in all its provinces, and
                   wherever Syrian communities exist. We focus on nation building and developmental projects.')
 
-u.file = File.open('/home/smetzger/RubymineProjects/theproject/app/assets/images/img_fence.jpg')
+u.file = File.open('/home/engineerx/watan-public/app/assets/images/img_fence.jpg')
 u.save!
