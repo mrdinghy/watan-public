@@ -4,7 +4,7 @@ class InstitutesController < ApplicationController
   # GET /institutes
   # GET /institutes.json
   def index
-    @institutes = Institute.all
+    @institutes = Institute.where('id <> ?', 1)
   end
 
   # GET /institutes/1

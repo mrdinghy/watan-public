@@ -100,8 +100,11 @@
                      data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                      data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" style="width: 900px">
                   <%= slide.blurb %><br>
-                  <%= link_to 'Learn More', slide_path(slide), :class => "btn btn-primary radius-50 btn-lg btn-animated margin-clear" %>
-                  <i class="fa fa-info-circle"></i></a> <span class="pl-5 pr-5">or</span> <a href="page-contact.html" class="btn btn-danger btn-lg radius-50 btn-animated margin-clear">DONATE <i class="fa fa-envelope"></i></a>
+
+                  <%= link_to 'Learn More', root_path(:anchor => 'about'), :class => "btn btn-primary radius-50 btn-lg btn-animated margin-clear" %>
+                  <i class="fa fa-info-circle"></i></a> <span class="pl-5 pr-5">or</span>
+                  <%= link_to 'Donate', root_path(:anchor => 'donate'), :class => "btn btn-danger btn-lg radius-50 btn-lg btn-animated margin-clear" %>
+                  <i class="fa fa-envelope"></i></a>
 
                 </div>
 
@@ -141,20 +144,20 @@
                      data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;"
                      data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                      data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" style="width: 300px">
+                  <!---
+                                   <div style="width:300px; padding: 10px; font-size: 14px;">
+                                   Beneficiaries impacted
+                                   </div>
 
-                  <div style="width:300px; padding: 10px; font-size: 14px;">
-                  Beneficiaries impacted
-                  </div>
 
 
-
-                    <div style="background-color: blue; opacity: 0.6; width:300px; padding: 10px">
-                  <ul  style="font-size: 14px; opacity: 1.0">
-                    <li class="facebook" style="display: inline"><a href=""><strong>26,300 </strong>Education</li><br>
-                    <li class="facebook" style="display: inline"><a href=""><strong>14,500 </strong>Economic Empowerment</li><br>
-                    <li class="facebook" style="display: inline"><a href=""><strong>9,700 </strong>Health Care</li><br>
-                  </ul>
-                </div>
+                                  <div style="background-color: blue; opacity: 0.6; width:300px; padding: 10px">
+                                   <ul  style="font-size: 14px; opacity: 1.0">
+                                     <li class="facebook" style="display: inline"><a href=""><strong>26,300 </strong>Education</li><br>
+                                     <li class="facebook" style="display: inline"><a href=""><strong>14,500 </strong>Economic Empowerment</li><br>
+                                     <li class="facebook" style="display: inline"><a href=""><strong>9,700 </strong>Health Care</li><br>
+                                   </ul>
+                                 </div>--->
 
 
 

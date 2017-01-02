@@ -11,20 +11,20 @@
 
 
 
-        <h2>News and Events</h2>
+        <h2>Latest News and Events</h2>
 
         <% @posts.each do |post| %>
             <% thisimg = @imgArray.sample %>
 
             <div class="col-md-6">
               <div class="col-sm-5">
-                <%= image_tag(thisimg, :width => "200", alt: "Watan Syria") %>
+                <%= image_tag(thisimg, :width => "160", alt: "Watan Syria") %>
 
                 </div>
 
               <div class="col-sm-7">
                 <small><%= post.published_at %></small>
-                <h3><%= post.title %></h3>
+                <h4><%= post.title %></h4>
                 <%= link_to 'Learn more...', post %>
               </div>
 
@@ -33,9 +33,9 @@
 
         <% end %>
 
+        </div>
 
 
-      </div>
 
 
     </div>

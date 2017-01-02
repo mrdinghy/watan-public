@@ -1,30 +1,76 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Institutes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @institutes.each do |institute| %>
-      <tr>
-        <td> <%= image_tag institute.logo.url, :width => "100", :class => "pull-left" %></td>
-        <td><%= institute.name %></td>
-        <td><%= institute.description %></td>
-        <td><%= link_to 'Show', institute %></td>
-        <td><%= link_to 'Edit', edit_institute_path(institute) %></td>
-        <td><%= link_to 'Destroy', institute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<!-- ================ -->
+<div class="breadcrumb-container">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><i class="fa fa-home pr-10"></i><a href="index.html">Home</a></li>
+      <li class="active">Grid 2 - 3 columns</li>
+    </ol>
+  </div>
+</div>
+<!-- breadcrumb end -->
 
-<br>
+<!-- main-container start -->
+<!-- ================ -->
+<section class="main-container">
 
-<%= link_to 'New Institute', new_institute_path %>
+  <div class="container">
+    <div class="row">
+
+      <!-- main start -->
+      <!-- ================ -->
+      <div class="main col-md-12">
+
+        <!-- page-title start -->
+        <!-- ================ -->
+        <h1 class="page-title">Watan Institutes</h1>
+        <div class="separator-2"></div>
+        <!-- page-title end -->
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit Illo quaerat <br> commodi excepturi dignissimos!</p>
+
+        <!-- isotope filters start -->
+        <div class="filters">
+          <ul class="nav nav-pills">
+            <li class="active"><a href="#" data-filter="*">All</a></li>
+            <li><a href="#" data-filter=".web-design">Web design</a></li>
+            <li><a href="#" data-filter=".app-development">App development</a></li>
+            <li><a href="#" data-filter=".site-building">Site building</a></li>
+          </ul>
+        </div>
+        <!-- isotope filters end -->
+
+        <div class="isotope-container-fitrows row grid-space-10">
+
+          <% @institutes.each do |institute| %>
+
+
+          <div class="col-sm-6 col-md-4 isotope-item app-development">
+            <div class="image-box style-2 mb-20 shadow bordered light-gray-bg text-center">
+              <div class="overlay-container">
+                <%= image_tag institute.logo.url, :width => "200", :class => "pull-left" %>
+                <div class="overlay-to-top">
+                  <p class="small margin-clear"><em>App development <br> Lorem ipsum dolor sit</em></p>
+                </div>
+              </div>
+              <div class="body">
+                <h3><%= institute.name %></h3>
+                <div class="separator"></div>
+                <%= institute.description %>
+                <a href="portfolio-item.html" class="btn btn-default btn-sm btn-hvr hvr-shutter-out-horizontal margin-clear">Read More<i class="fa fa-arrow-right pl-10"></i></a>
+              </div>
+            </div>
+          </div>
+          <% end %>
+
+        </div>
+
+      </div>
+      <!-- main end -->
+
+    </div>
+  </div>
+</section>
+<!-- main-container end -->

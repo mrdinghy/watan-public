@@ -15,27 +15,40 @@
     <%= csrf_meta_tags %>
 
   </head>
-  <% if params[:controller] == 'visitors' %>
-  <body class="no-trans front-page transparent-header" onload="document.refresh();">
-    <% else %>
-    <body class="no-trans front-page transparent-header"">
-<% end %>
+  <%# if params[:controller] == 'visitors' %>
+     <body class="no-trans front-page transparent-header" onload="document.refresh();">
+    <%# else %>
+    <!--<body class="no-trans front-page transparent-header"">-->
+<%# end %>
 
   <div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>
 
   <!-- page wrapper start -->
   <!-- ================ -->
   <div class="page-wrapper">
-    <% if params[:controller] == 'visitors' %>
-        <div class="header-container">
-            <header class="header  fixed fixed-before  dark clearfix">
-              <%= render 'layouts/watan_navbar' %>
-              <%#= render 'layouts/b_header' %>
-            </header>
-        </div>
-    <% else %>
 
-              <%= render 'layouts/watan_backbar' %>
+
+    <% if params[:controller] == 'khayr' %>
+        <%= render 'layouts/navbar_khayr' %>
+    <% elsif params[:controller] == 'horiat' %>
+        <%= render 'layouts/navbar_horiat' %>
+    <% elsif params[:controller] == 'dirisat' %>
+        <%= render 'layouts/navbar_dirisat' %>
+    <% elsif params[:controller] == 'generationfreedom' %>
+        <%= render 'layouts/navbar_generationfreedom' %>
+    <% elsif params[:controller] == 'syan' %>
+        <%= render 'layouts/navbar_syan' %>
+    <% elsif params[:controller] == 'sada' %>
+        <%= render 'layouts/navbar_sada' %>
+    <% elsif params[:controller] == 'sbc' %>
+        <%= render 'layouts/navbar_sbc' %>
+    <% else %>
+        <div class="header-container">
+          <header class="header  fixed fixed-before  dark clearfix">
+            <%= render 'layouts/watan_navbar' %>
+            <%#= render 'layouts/b_header' %>
+          </header>
+        </div>
 
 
 
@@ -51,6 +64,45 @@
 <footer id="footer" class="clearfix ">
       <%= render 'layouts/footer' %>
     </footer>
+
+
+    <% if user_signed_in? %>
+
+        <div class="col-sm-6">
+          <div class="divider"></div>
+          <ul class="menu">
+            <li ><%= link_to 'Static Pages', pages_path %></li>
+            <li ><%= link_to 'Institutes', institutes_path %></li>
+            <li ><%= link_to 'Slides', slides_path %></li>
+            <li ><%= link_to 'Projects', projects_path %></li>
+            <li ><%= link_to 'Program Areas', watanprograms_path %></li>
+            <li ><%= link_to 'Countries', countries_path %></li>
+
+
+          </ul>
+        </div>
+        </div>
+        <%= render :partial => 'visitors/slidechecker' %>
+    <% end %>
+
+    <div style="background: #666">
+
+
+      <% if user_signed_in? %>
+          <%= link_to 'Edit account', edit_user_registration_path %><br>
+          <%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %><br>
+      <% else %>
+          <%= link_to 'Sign in', new_user_session_path %><br>
+          <%= link_to 'Sign up', new_user_registration_path %><br>
+      <% end %>
+      <% if user_signed_in? %>
+          <%= link_to 'Users', users_path %><br>
+      <% end %>
+
+    </div>
+
+
+
     <%#= render 'layouts/b_footer' %>
 
      <script type="text/javascript" src="assets/js/jquery.themepunch.tools.min.js?rev=5.0"></script>

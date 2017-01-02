@@ -19,12 +19,18 @@ Rails.application.config.assets.precompile += %w( img_training1.jpg )
 Rails.application.config.assets.precompile += %w( img_training2.jpg )
 Rails.application.config.assets.precompile += %w( img_tent.jpg )
 Rails.application.config.assets.precompile += %w( img_training2.jpg )
+Rails.application.config.assets.precompile += %w( img_camera.jpg )
 
 
+Rails.application.config.assets.precompile += %w( khayr_logo_winder.png )
+Rails.application.config.assets.precompile += %w( khayr_logo_green.png )
+Rails.application.config.assets.precompile += %w( Winter_banner_AR.jpg )
 
 
-
-
+Rails.application.config.assets.precompile += %w( horyat.png )
+Rails.application.config.assets.precompile += %w( dirisat_header.png )
+Rails.application.config.assets.precompile += %w( dirisat_logo_web.png )
+Rails.application.config.assets.precompile += %w( GF-logo.png )
 
 
 # Add additional assets to the asset load path

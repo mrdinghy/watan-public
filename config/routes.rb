@@ -26,6 +26,18 @@ Rails.application.routes.draw do
   get 'allprojects', to: 'details#showprojects', as: 'allprojects'
   get 'allposts', to: 'details#showposts', as: 'allposts'
 
+  get 'aboutwatan', to: 'visitors#about', as: 'aboutwatan'
+  get 'watannews', to: 'visitors#news', as: 'watannews'
+  get 'program', to: 'visitors#program', as: 'program'
+
+
   get 'khayr', to: 'khayr#index', as: 'khayr'
+  get 'horiat', to: 'horiat#index', as: 'horiat'
+  get 'generationfreedom', to: 'generationfreedom#index', as: 'generationfreedom'
+  get 'sbc', to: 'sbc#index', as: 'sbc'
+  get 'sada', to: 'sada#index', as: 'sada'
+  get 'syan', to: 'syan#index', as: 'syan'
+  get 'dirisat', to: 'dirisat#index', as: 'dirisat'
+
 
 end

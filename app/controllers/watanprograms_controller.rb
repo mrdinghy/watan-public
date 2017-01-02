@@ -10,6 +10,8 @@ class WatanprogramsController < ApplicationController
   # GET /watanprograms/1
   # GET /watanprograms/1.json
   def show
+    @imgArray = ["img_academic.jpg", "img_boysandgirls.jpg", "img_boysinschool.jpg", "img_doctor.jpg", "img_ditch.jpg", "img_crane.jpg", "img_mudhut.jpg", "img_training1.jpg", "img_training2.jpg", "img_tent.jpg", "img_training2.jpg"]
+
     @projects = ProjectsWatanprogram.where('watanprogram_id = ?', @watanprogram.id)
     @posts = PostsWatanprogram.where('watanprogram_id = ?', @watanprogram.id)
 

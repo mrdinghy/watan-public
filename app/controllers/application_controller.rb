@@ -19,7 +19,6 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
-
   #@contactpage = Page.find(5)
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
 end
