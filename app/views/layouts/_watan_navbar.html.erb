@@ -7,19 +7,6 @@
 <% @allprograms = Watanprogram.all %>
 
 
-<div class="row" style="background-color: #fff">
-  <div class="col-sm-6"></div>
-  <div class="col-sm-6 <%= I18n.locale.to_s %> <%= @divright %>">
-<span style="font-size: 16px">
-    <span style="color: #ccc">Language:</span>
-   <span style="font-size: 18px; font-weight:bold; color: #000"> <%= link_to_unless_current "English", locale: "en", class: "switch" %></span> &nbsp;&nbsp;&nbsp;
-      <span style="font-size: 18px; font-weight:bold; color: #000""> <%= link_to_unless_current "العربية", locale: "ar" %></span>
-</span>
-  </div>
-</div>
-
-
-
 <div class="container">
 
 
@@ -112,25 +99,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                   <li class="dropdown  mega-menu narrow">
                     <a href="#programs" class="dropdown-toggle" data-toggle="dropdown"><strong>Programs</strong></a>
                     <ul class="dropdown-menu">
@@ -168,22 +136,7 @@
                   </li>
 
 
-
-
-                  <li class="dropdown  mega-menu narrow">
-                    <a href="#programs" class="dropdown-toggle" data-toggle="dropdown"><strong>Support</strong></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#support"><%= t "navbar.support" %></a></li>
-
-
-
-
-                    </ul>
-
-                  </li>
-
-
-
+                  <li><%= link_to 'Donate', root_path(:anchor => 'donate') %></li>
 
 
 
@@ -194,8 +147,10 @@
 
 
 
-
-
+<div class="pull-right">
+                  <span style="font-size: 18px; font-weight:bold; color: #000"> <%= link_to_unless_current "English", locale: "en", class: "switch" %></span> &nbsp;&nbsp;&nbsp;
+                  <span style="font-size: 18px; font-weight:bold; color: #000""> <%= link_to_unless_current "العربية", locale: "ar" %></span>
+</div>
 
 
 

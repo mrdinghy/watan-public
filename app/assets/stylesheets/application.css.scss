@@ -61,10 +61,12 @@ a {
 
 .transparent-header header.header.transparent-header-on {
   z-index: 22;
-  position: absolute;
+  position: fixed;
   width: 100%;
   left: 0;
   background-color: rgba(255, 255, 255, 0.92);
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
   border-top-color: #a0a0a0;
 }
+
+
