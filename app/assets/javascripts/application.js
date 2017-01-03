@@ -37,5 +37,7 @@
 //= require template
 //= require custom
 //= require froala_editor.min
+//= require plugins/code_view.min
+//= require plugins/font_size.min
 //= require lists.min
 //= require_tree .
