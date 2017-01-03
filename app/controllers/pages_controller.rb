@@ -14,6 +14,7 @@ class PagesController < ApplicationController
 
   # GET /pages/new
   def new
+    before_action :authenticate_user!
     @page = Page.new
   end
 
@@ -24,6 +25,7 @@ class PagesController < ApplicationController
   # POST /pages
   # POST /pages.json
   def create
+    before_action :authenticate_user!
     @page = Page.new(page_params)
 
     respond_to do |format|
@@ -40,6 +42,7 @@ class PagesController < ApplicationController
   # PATCH/PUT /pages/1
   # PATCH/PUT /pages/1.json
   def update
+    before_action :authenticate_user!
     respond_to do |format|
       if @page.update(page_params)
         format.html { redirect_to @page, notice: 'Page was successfully updated.' }
@@ -54,6 +57,7 @@ class PagesController < ApplicationController
   # DELETE /pages/1
   # DELETE /pages/1.json
   def destroy
+    before_action :authenticate_user!
     @page.destroy
     respond_to do |format|
       format.html { redirect_to pages_url, notice: 'Page was successfully destroyed.' }

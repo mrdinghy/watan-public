@@ -76,9 +76,10 @@
     </p>
 
 
-
+    <% if user_signed_in? %>
 
     <%= link_to 'Edit', edit_slide_path(@slide), :class =>"btn btn-primary" %> |
+        <% end %>
     <%= link_to 'Back', slides_path %>
 
 

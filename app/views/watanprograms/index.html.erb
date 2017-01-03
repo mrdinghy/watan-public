@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <% if user_signed_in? %>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +16,11 @@
       <tr>
         <td><%= watanprogram.name %></td>
         <td><%= link_to 'Show', watanprogram %></td>
-        <td><%= link_to 'Edit', edit_watanprogram_path(watanprogram) %></td>
-        <td><%= link_to 'Destroy', watanprogram, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+        <td> <% if user_signed_in? %><%= link_to 'Edit', edit_watanprogram_path(watanprogram) %><% end %></td>
+        <td> <% if user_signed_in? %><%= link_to 'Destroy', watanprogram, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></td>
+
+            </tr>
     <% end %>
   </tbody>
 </table>

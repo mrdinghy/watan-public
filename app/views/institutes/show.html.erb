@@ -15,8 +15,9 @@
 
         <%= @institute.description.html_safe %>
       </p>
-
+      <% if user_signed_in? %>
       <%= link_to 'Edit', edit_institute_path(@institute), :class => "btn btn-small btn-primary" %> |
+          <% end %>
       <%= link_to 'Back', institutes_path %>
 
 </div>

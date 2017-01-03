@@ -117,9 +117,10 @@
     <% end %>
 
 
-
+      <% if user_signed_in? %>
       <%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-small btn-primary" %> |
-      <%= link_to 'Back', posts_path %>
+      <% end %>
+          <%= link_to 'Back', posts_path %>
 
 </div>
 <div class="row">
@@ -132,12 +133,14 @@
                 <%= link_to doc.document_file_name , doc.document.url(:original, false) %>
                 <%= doc.document_updated_at %><br>
             <% end %>
+            <% if user_signed_in? %>
             <%= simple_form_for @new_site_document do |form| %>
                 <%= form.hidden_field :documentable_id, :value => @post.id %>
                 <%= form.hidden_field :documentable_type, :value => 'post' %>
                 <%= form.input :document, as: :file %>
                 <%= form.button :submit, :value => 'Upload Document', :class => "mb-sm btn btn-primary" %>
             <% end %>
+                <% end %>
           </div>
         </div>
       </div>
@@ -153,12 +156,14 @@
                 <%= link_to img.image_file_name , img.image.url(:original, false) %>
                 <%= img.image_updated_at %><br>
             <% end %>
+            <% if user_signed_in? %>
             <%= simple_form_for @new_site_image do |form| %>
                 <%= form.hidden_field :imageable_id, :value => @post.id %>
                 <%= form.hidden_field :imageable_type, :value => 'post' %>
                 <%= form.input :image, as: :file %>
                 <%= form.button :submit, :value => 'Upload Image', :class => "mb-sm btn btn-primary" %>
             <% end %>
+                <% end %>
           </div>
         </div>
       </div>

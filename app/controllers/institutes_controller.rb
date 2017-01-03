@@ -17,6 +17,7 @@ class InstitutesController < ApplicationController
 
   # GET /institutes/new
   def new
+    before_action :authenticate_user!
     @institute = Institute.new
   end
 
@@ -27,6 +28,7 @@ class InstitutesController < ApplicationController
   # POST /institutes
   # POST /institutes.json
   def create
+    before_action :authenticate_user!
     @institute = Institute.new(institute_params)
 
     respond_to do |format|
@@ -43,6 +45,7 @@ class InstitutesController < ApplicationController
   # PATCH/PUT /institutes/1
   # PATCH/PUT /institutes/1.json
   def update
+    before_action :authenticate_user!
     respond_to do |format|
       if @institute.update(institute_params)
         format.html { redirect_to @institute, notice: 'Institute was successfully updated.' }
@@ -57,6 +60,7 @@ class InstitutesController < ApplicationController
   # DELETE /institutes/1
   # DELETE /institutes/1.json
   def destroy
+    before_action :authenticate_user!
     @institute.destroy
     respond_to do |format|
       format.html { redirect_to institutes_url, notice: 'Institute was successfully destroyed.' }

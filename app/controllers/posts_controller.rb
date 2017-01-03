@@ -40,6 +40,7 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    before_action :authenticate_user!
     @institute_list = self.set_institute_list
     @watanprogram_list = self.set_watanprogram_list
     @post = Post.new
@@ -47,11 +48,13 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    before_action :authenticate_user!
   end
 
   # POST /posts
   # POST /posts.json
   def create
+    before_action :authenticate_user!
     @post = Post.new(post_params)
 
     respond_to do |format|
@@ -68,7 +71,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-
+    before_action :authenticate_user!
 
 
     respond_to do |format|
@@ -85,6 +88,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    before_action :authenticate_user!
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }

@@ -42,7 +42,9 @@
   <strong>Description:</strong>
   <%= @watanprogram.body.html_safe if @watanprogram.body %>
 </p>
+      <% if user_signed_in? %>
 <%= link_to 'Edit', edit_watanprogram_path(@watanprogram) %> |
+          <% end %>
 <%= link_to 'Back', watanprograms_path %>
 </div>
 
