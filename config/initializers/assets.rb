@@ -2,7 +2,7 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
-Rails.application.config.assets.precompile += %w( logo PNG_white.png )
+Rails.application.config.assets.precompile += %w( logo_PNG_white.png )
 Rails.application.config.assets.precompile += %w( 2.jpg )
 Rails.application.config.assets.precompile += %w( nc.jpg )
 
