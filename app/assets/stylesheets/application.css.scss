@@ -48,7 +48,9 @@
   border: none;
   margin: 0;
 }
-
+a.navbar {
+  color: #fff;
+}
 
 
 .navbar.navbar-default-khayr {
@@ -56,9 +58,7 @@
   border: none;
   margin: 0;
 }
-a {
-  color: #fff;
-}
+
 
 .transparent-header header.header.transparent-header-on {
   z-index: 22;
@@ -70,4 +70,7 @@ a {
   border-top-color: #a0a0a0;
 }
 
+a {
+  color: #666;
+}
 
