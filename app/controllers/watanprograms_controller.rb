@@ -19,7 +19,7 @@ class WatanprogramsController < ApplicationController
 
   # GET /watanprograms/new
   def new
-    before_action :authenticate_user!
+
     @watanprogram = Watanprogram.new
   end
 
@@ -30,7 +30,6 @@ class WatanprogramsController < ApplicationController
   # POST /watanprograms
   # POST /watanprograms.json
   def create
-    before_action :authenticate_user!
     @watanprogram = Watanprogram.new(watanprogram_params)
 
     respond_to do |format|
@@ -47,7 +46,7 @@ class WatanprogramsController < ApplicationController
   # PATCH/PUT /watanprograms/1
   # PATCH/PUT /watanprograms/1.json
   def update
-    before_action :authenticate_user!
+
     respond_to do |format|
       if @watanprogram.update(watanprogram_params)
         format.html { redirect_to @watanprogram, notice: 'Watanprogram was successfully updated.' }
@@ -62,7 +61,7 @@ class WatanprogramsController < ApplicationController
   # DELETE /watanprograms/1
   # DELETE /watanprograms/1.json
   def destroy
-    before_action :authenticate_user!
+
     @watanprogram.destroy
     respond_to do |format|
       format.html { redirect_to watanprograms_url, notice: 'Watanprogram was successfully destroyed.' }
