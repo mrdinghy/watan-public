@@ -5,19 +5,32 @@ display: inline;
 }
 
 </style>
-
+<div id="banner" class="banner clearfix">
 <%= render :partial => 'visitors/slideshow' %>
+  </div>
+
+<section id="news" class="light-gray-bg pv-20">
+  <div class="sectionbanner watandrakgray">Latest News</div>
+  <br><br>
+  <%= render :partial => 'visitors/latestnews' %>
+</section>
+
+
+
+<section id="about" class="main-container">
 <%= render :partial => 'visitors/about' %>
-<%= render :partial => 'visitors/latestnews' %>
-
-<%= render :partial => 'visitors/donate' %>
+</section>
 
 
+<section id="donate" class="main-container">
+    <div class="sectionbanner watandarkred">Donate</div>
+  <br><br>
+    <%= render :partial => 'visitors/donate' %>
+</section>
 
-<%= render :partial => 'visitors/wherewework' %>
+
 <%= render :partial => 'visitors/contact' %>
 
-<%= render :partial => 'visitors/partners' %>
 
 
 

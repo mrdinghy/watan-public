@@ -22,8 +22,8 @@ class PostsController < ApplicationController
 
     @postprograms = PostsWatanprogram.where('post_id =?', @post.id )
     @postinstitutes = InstitutesPost.where('post_id =?', @post.id )
-
-
+    programids = @postprograms.pluck(:watanprogram_id)
+    @relatedposts = PostsWatanprogram.where(watanprogram_id: :programids).where.not(post_id: @post.id)
   end
 
 
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    before_action :authenticate_user!
+
   end
 
   # POST /posts
@@ -104,7 +104,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :published, :start_date, :end_date, :post_type, :image, :is_event,
+      params.require(:post).permit(:title, :body, :published, :start_date, :end_date, :post_type, :image, :is_event, :on_homepage,
                                    :event_date, :event_time, :event_location, :event_link, watanprogram_ids: [], institute_ids: [])
     end
 end

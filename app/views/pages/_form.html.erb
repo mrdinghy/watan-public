@@ -23,7 +23,15 @@
     </div>
 
 
-  <div class="actions">
+
+    <div class="field">
+      <%= f.label :pagelocation %><br>
+      <%= f.text_field :pagelocation %>
+    </div>
+
+
+
+    <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
@@ -41,6 +49,25 @@
             toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', 'insertHR', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
             heightMin: 100,
             heightMax: 600
+        })
+    });
+    $(function() {
+        $.FroalaEditor.DefineIcon('imageInfo', {NAME: 'info'});
+        $.FroalaEditor.RegisterCommand('imageInfo', {
+            title: 'Info',
+            focus: false,
+            undo: false,
+            refreshAfterCallback: false,
+            callback: function () {
+                var $img = this.image.get();
+                alert($img.attr('src'));
+            }
+        });
+
+        $('#pagebody').froalaEditor({
+            // Set image buttons, including the name
+            // of the buttons defined in customImageButtons.
+            imageEditButtons: ['imageDisplay', 'imageAlign', 'imageInfo', 'imageRemove']
         })
     });
 

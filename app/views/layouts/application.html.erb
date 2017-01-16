@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Watan=Syria" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Watan Syria" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails Devise" %>">
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -10,11 +10,36 @@
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
   </head>
+
+
   <%# if params[:controller] == 'visitors' %>
      <body class="no-trans front-page transparent-header" onload="document.refresh();">
     <%# else %>
@@ -27,32 +52,9 @@
   <!-- ================ -->
   <div class="page-wrapper">
 
-
-    <% if params[:controller] == 'khayr' %>
-        <%= render 'layouts/navbar_khayr' %>
-    <% elsif params[:controller] == 'horiat' %>
-        <%= render 'layouts/navbar_horiat' %>
-    <% elsif params[:controller] == 'dirisat' %>
-        <%= render 'layouts/navbar_dirisat' %>
-    <% elsif params[:controller] == 'generationfreedom' %>
-        <%= render 'layouts/navbar_generationfreedom' %>
-    <% elsif params[:controller] == 'syan' %>
-        <%= render 'layouts/navbar_syan' %>
-    <% elsif params[:controller] == 'sada' %>
-        <%= render 'layouts/navbar_sada' %>
-    <% elsif params[:controller] == 'sbc' %>
-        <%= render 'layouts/navbar_sbc' %>
-    <% else %>
         <div class="header-container">
-          <header class="header  fixed fixed-before  dark clearfix">
-            <%= render 'layouts/watan_navbar' %>
-            <%#= render 'layouts/b_header' %>
-          </header>
+            <%= render 'layouts/watan_header' %>
         </div>
-
-
-
-    <% end %>
 
 
     <main role="main">
@@ -60,10 +62,10 @@
 
        <%= yield %>
     </main>
+    <div class="clearfix"></div>
 
-<footer id="footer" class="clearfix ">
-      <%#= render 'layouts/footer' %>
-    </footer>
+      <%= render 'layouts/watan_footer' %>
+
 
 
     <% if user_signed_in? %>
@@ -83,7 +85,13 @@
         </div>
         </div>
         <%= render :partial => 'visitors/slidechecker' %>
-    <% end %>
+<% end %>
+
+
+
+
+
+
 
     <div style="background: #fff">
 
@@ -98,6 +106,8 @@
       <% if user_signed_in? %>
           <%= link_to 'Users', users_path %><br>
       <% end %>
+
+
 
     </div>
 

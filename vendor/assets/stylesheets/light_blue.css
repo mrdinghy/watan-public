@@ -63,7 +63,7 @@ mark,
 }
 /*Transparent Header*/
 .transparent-header header.header.dark.transparent-header-on {
-  background-color: rgba(57, 66, 69, 0.8);
+  background-color: #002742;
   border-top-color: rgba(37, 42, 44, 0.5);
 }
 /*Fixed Navigation*/
@@ -581,7 +581,7 @@ header:not(.dark) .dropdown-menu > li.active > a i {
 }
 /* second level menu item */
 .dark.header .dropdown-menu {
-  background-color: #2e3537;
+  background-color: #002742;
   border: 1px solid rgba(57, 66, 69, 0.8);
 }
 .dark.header .dropdown-menu .divider {

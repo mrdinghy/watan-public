@@ -1,22 +1,17 @@
 
-<% @posts=Post.all %>
+
 <!-- section start -->
 <!-- ================ -->
-<section id="news" class="light-gray-bg pv-20">
+
   <div class="container">
     <div class="row">
       <div class="col-md-12">
 
 
-
-
-
-        <h2>Latest News and Events</h2>
-
-        <% @posts.each do |post| %>
+        <% @latestnews.each do |post| %>
             <% thisimg = @imgArray.sample %>
 
-            <div class="col-md-6">
+            <div class="col-md-6 style="padding: 5px">
               <div class="col-sm-5">
                 <%= image_tag(thisimg, :width => "160", alt: "Watan Syria") %>
 
@@ -42,15 +37,3 @@
 
 
 </div>
-
-
-
-
-
-
-
-
-
-
-</section>
-<!-- section end -->

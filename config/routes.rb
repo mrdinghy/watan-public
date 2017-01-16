@@ -23,6 +23,12 @@ Rails.application.routes.draw do
   get 'membership', to: 'visitors#membership', as: 'membership'
   get 'donate', to: 'visitors#donate', as: 'donate'
 
+  get 'mission', to: 'visitors#mission', as: 'mission'
+  get 'wherewework', to: 'visitors#wherewework', as: 'wherewework'
+  get 'partners', to: 'visitors#partners', as: 'partners'
+
+
+
   get 'allprojects', to: 'details#showprojects', as: 'allprojects'
   get 'allposts', to: 'details#showposts', as: 'allposts'
 

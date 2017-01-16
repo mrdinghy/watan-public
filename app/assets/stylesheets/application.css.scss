@@ -14,63 +14,86 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap-datetimepicker.min";
-@import "datatables";
-@import "dataTables.bootstrap";
-@import "jquery.dataTables";
-@import "dataTables.jqueryui";
-@import "animation";
+@import "font-awesome";
+@import "animations";
 @import "fontello";
-@import "fontello-codes";
-@import "fontello-embedded";
-@import "fontello-ie7";
-@import "fontello-ie7-codes";
 @import "magnific-popup";
 @import "settings";
-@import "layers";
-@import "navigation.css";
 @import "animations";
 @import "owl.carousel";
 @import "owl.transitions";
 @import "hover-min";
-@import "morphext";
 @import "style";
 @import "light_blue";
 @import "custom";
 @import "froala_editor.min";
 @import "froala_style.min";
 @import "plugins/code_view.min";
-@import "font-awesome";
+@import "plugins/image.min";
 
 
 
-.navbar.navbar-default-horiat {
-  background-color: #047832;
-  border: none;
-  margin: 0;
+
+@font-face {
+  font-family: "AvenirNextLTPro";
+  src: font-url('/assets/AvenirNextLTPro-Regular.otf') format("opentype");
+  font-size: normal;
+  font-weight: normal;
 }
-a.navbar {
+
+
+body {
+  font-family: 'AvenirNextLTPro';
+}
+
+.transparent-header header.header.dark.transparent-header-on {
+  background-color: #002742;
+  border-top-color: rgba(37, 42, 44, 0.5);
+}
+
+.dark.header .dropdown-menu {
+  background-color: #002742;
+  border: 1px solid rgba(57, 66, 69, 0.8);
+}
+
+.header-top.dark {
+  background-color: #ffffff;
+  border-bottom: 1px solid #252a2c;
+  font-size: 18px;
+}
+
+.header-top.dark, .header-top.colored {
+  color: #666666;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.dark .footer {
+  background-color: #002742;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar .navbar-nav {
+  font-family: 'AvenirNextLTPro';
+}
+
+
+.navbar-nav {
+  font-family: 'AvenirNextLTPro';
+}
+
+
+.sectionbanner {
+  background-color: #002742;
   color: #fff;
+  text-align: center;
+  font-size: 24px;
 }
 
 
-.navbar.navbar-default-khayr {
-  background-color: #535353;
-  border: none;
-  margin: 0;
-}
 
-
-.transparent-header header.header.transparent-header-on {
-  z-index: 22;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.92);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-  border-top-color: #a0a0a0;
-}
-
-a {
-  color: #666;
-}
-
+.watanblue {background-color: #002742;}
+.watandarkgray {background-color: #85868A;}
+.watanlightgray {background-color: #009892;}
+.watandarkred {background-color: darkred;}

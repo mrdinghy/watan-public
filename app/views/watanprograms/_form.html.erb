@@ -26,9 +26,23 @@
     </div>
 
 
+    <div class="form-group">
+      <%= f.label 'Program Logo', :class => "col-sm-2 control-label" %>
+      <div class="col-sm-4">
+        <%= image_tag @watanprogram.image.url, :width => "100%", :class => "pull-left" %>
+
+      </div>
+      <%= f.label 'Replace', :class => "col-sm-2 control-label" %>
+      <div class="col-sm-4">
+        <%= f.file_field :image, :class => "form-control" %>
+      </div>
+    </div>
 
 
-  <div class="actions">
+
+
+
+    <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>

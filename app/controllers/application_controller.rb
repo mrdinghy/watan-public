@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :set_locale
+  before_filter :setup_programs
 
   private
 
@@ -19,6 +20,9 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
-  #@contactpage = Page.find(5)
-  #before_action :authenticate_user!
+
+  def setup_programs
+   @allprograms = Watanprogram.all
+  end
+
 end

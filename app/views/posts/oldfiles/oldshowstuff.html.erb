@@ -1,0 +1,85 @@
+
+<div class="row">
+
+
+
+
+
+
+  <% if @post.on_homepage %>
+
+      <h3>This News Post is on the Home Page</h3>
+
+  <% end %>
+
+
+
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Attachments</div>
+      <div class="panel-body">
+        <% @postdocuments.each do |doc| %>
+            <%= link_to doc.document_file_name , doc.document.url(:original, false) %>
+            <%= doc.document_updated_at %><br>
+        <% end %>
+        <% if user_signed_in? %>
+            <%= simple_form_for @new_site_document do |form| %>
+                <%= form.hidden_field :documentable_id, :value => @post.id %>
+                <%= form.hidden_field :documentable_type, :value => 'post' %>
+                <%= form.input :document, as: :file %>
+                <%= form.button :submit, :value => 'Upload Document', :class => "mb-sm btn btn-primary" %>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Images -->
+
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Images</div>
+      <div class="panel-body">
+        <% @postimages.each do |img| %>
+            <%= link_to img.image_file_name , img.image.url(:original, false) %>
+            <%= img.image_updated_at %><br>
+        <% end %>
+        <% if user_signed_in? %>
+            <%= simple_form_for @new_site_image do |form| %>
+                <%= form.hidden_field :imageable_id, :value => @post.id %>
+                <%= form.hidden_field :imageable_type, :value => 'post' %>
+                <%= form.input :image, as: :file %>
+                <%= form.button :submit, :value => 'Upload Image', :class => "mb-sm btn btn-primary" %>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- End images -->
+
+
+  <div class="imagepanel">
+    <% @postimages.each do |img| %>
+        <%= image_tag(img.image.url(:original, false), :class => "img-responsive") %>
+    <% end %>
+
+  </div>
+
+
+
+  <!-- Blog Search Well -->
+  <div class="well">
+
+  </div>
+
+  <!-- Blog Categories Well -->
+
+
+</div>
+<% end %>
+
+</div>
+<!-- /.container -->
+
+

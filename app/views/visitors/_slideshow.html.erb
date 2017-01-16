@@ -1,6 +1,6 @@
 <!-- banner start -->
 <!-- ================ -->
-<div id="banner" class="banner clearfix">
+
 
   <!-- slideshow start -->
   <!-- ================ -->
@@ -16,19 +16,19 @@
         <% @myslides.each do |slide| %>
 
 
-              <li data-transition="fade" data-masterspeed="default" data-title="Simple and Smart Bootstrap Template">
+              <li data-transition="fade" data-masterspeed="default" data-title="">
                 <% title_go = slide.topline.to_i + 130 %>
                 <% line_go = title_go  + 50 %>
                 <% text_go = line_go  + 10 %>
                 <% textlines = slide.blurblines * 40 %>
                 <% social_go = 80 + (text_go + textlines) %>
 
-        <!--  <li data-transition="boxfade" data-slotamount="7" data-masterspeed="default" data-title="Simple and Smart Bootstrap Template">-->
+
 
                 <!-- main image -->
                 <%= image_tag slide.file.url, :class => "rev-slidebg", :data => { :bgposition => "center center", :bgrepeat => "no-repeat", :bgfit => "cover"}  %>
 
-               <!-- <img src="images/corporate-4-slider-slide-2.jpg" alt="slidebg2" data-bgposition="center center" data-bgrepeat="no-repeat" data-bgfit="cover" class="rev-slidebg">-->
+
 
                 <!-- Transparent Background -->
                 <div class="tp-caption dark-translucent-bg"
@@ -121,6 +121,7 @@
 
 
                   <ul class="social-stack" style="font-size: 24px">
+                    <!---
                     <li class="facebook" style="display: inline"><a href="https://www.facebook.com/WatanSyria" title="Watan on Facebook"><span class="icon-facebook"></span></a></li>
                     <li class="twitter" style="display: inline"><a href="https://twitter.com/WatanSyria" title="Watan on Twitter"><span class="icon-twitter"></span></a></li>
                     <li class="youtube" style="display: inline"><a href="http://www.youtube.com/user/WatanSyria" title="Watan on Youtube"><span class="icon-youtube"></span><i class="icon-youtube"></i></a></li>
@@ -129,7 +130,7 @@
                     <li class="instagram" style="display: inline"><a href="http://instagram.com/watansyria" title="Watan on Instagram"><span class="icon-instagram"></span></a></li>
                     <li class="linkedin" style="display: inline"><a href="http://www.linkedin.com/company/watansyria" title="Watan on LinkedIn"><span class="icon-linkedin"></span></a></li>
                     <li class="rss" style="display: inline"><a href="http://www.watansyria.org/en/feed" title="RSS Feed"><span class="icon-rss"></span></a></li>
-
+--->
                   </ul>
                    </div>
 
@@ -152,7 +153,7 @@
 
 
                                   <div style="background-color: blue; opacity: 0.6; width:300px; padding: 10px">
-                                   <ul  style="font-size: 14px; opacity: 1.0">
+             `                      <ul  style="font-size: 14px; opacity: 1.0">
                                      <li class="facebook" style="display: inline"><a href=""><strong>26,300 </strong>Education</li><br>
                                      <li class="facebook" style="display: inline"><a href=""><strong>14,500 </strong>Economic Empowerment</li><br>
                                      <li class="facebook" style="display: inline"><a href=""><strong>9,700 </strong>Health Care</li><br>
@@ -256,5 +257,5 @@
   </div>
   <!-- slideshow end -->
 
-</div>
+
 <!-- banner end -->

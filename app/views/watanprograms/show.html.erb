@@ -23,21 +23,9 @@
 
 
 
+      <%= image_tag @watanprogram.image.url, :width => "100%", :class => "pull-left" %>
 
 
-          <% thisimg = @imgArray.sample %>
-
-
-                  <%= image_tag(thisimg, :width => "100%", alt: "Watan Syria") %>
-
-
-
-
-
-    <p>
-  <strong>Name:</strong>
-  <%= @watanprogram.name %>
-</p>
 <p>
   <strong>Description:</strong>
   <%= @watanprogram.body.html_safe if @watanprogram.body %>
