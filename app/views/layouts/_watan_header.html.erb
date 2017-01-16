@@ -44,9 +44,10 @@
             <li><%#= link_to_unless_current "English", locale: "en", class: "switch" %></li>
             <li><%#= link_to_unless_current "العربية", locale: "ar" %></li>
 --->
-            <li>Careers  |</li>
-          <li>  Media  |</li>
-          <li>  Contact Us</li>
+            <li ><%= link_to page_path(15) do %>Careers<% end %>  |  </li>
+            <li ><%= link_to page_path(16) do %>Media<% end %>  |  </li>
+            <li><%= link_to 'Contact Us', root_path(:anchor => 'contact') %></li>
+
           </ul>
         </div>
         <!-- header-top-first end -->
@@ -101,9 +102,10 @@
           <!-- logo -->
           <div id="logo" class="logo">
             <%= link_to root_path do %>
+                <%= image_tag("watanbluelogo_120.png", alt: "Watan Syria") %>
 
               <% end %>
-            <a href="http://watansyria.org">  <%= image_tag("watanbluelogo_120.png", alt: "Watan Syria") %></a>
+
           </div>
 
 
@@ -199,7 +201,7 @@
                       </ul>
                     </li>
 
-                    <li><%= link_to page_path(14) do %>Emergency<br>Response<% end %></li>
+                    <li><%= link_to page_path(11) do %>Emergency<br>Response<% end %></li>
 
                     <li ><%= link_to page_path(7) do %>WATAN<br>Network<% end %></li>
                     <li ><%= link_to page_path(6) do %>Partners<% end %></li>
