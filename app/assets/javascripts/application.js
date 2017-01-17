@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require jquery.themepunch.tools.min
 //= require jquery.themepunch.revolution.min
@@ -32,4 +31,5 @@
 //= require plugins/font_size.min
 //= require plugins/image.min
 //= require lists.min
+//= require turbolinks
 //= require_tree .

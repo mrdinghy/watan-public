@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-3 col-sm-3 col-md-4col-xs-3">
-        <%= link_to root_path do %>
+        <%= link_to root_path, 'data-no-turbolink' => true do  %>
         <%= image_tag("whiteblue.png", alt: "Watan Syria", :size => "150x151" ) %>
         <% end %>
       </div>
@@ -185,7 +185,7 @@
                         <li><%= link_to 'About', root_path(:anchor => 'about') %></li>
                         <li><%= link_to page_path(13) do %>Mission and Objectives<% end %></li>
                         <li><%= link_to page_path(14) do %>Reach<% end %></li>
-                        <li><%= link_to page_path(6) do %>Partners<% end %></li>
+
 
                     </ul>
                     </li>
