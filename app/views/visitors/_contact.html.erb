@@ -25,6 +25,54 @@
       </div>
       <!-- main end -->
 
+      <%= form_for(@websitecontact) do |f| %>
+          <% if @websitecontact.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@websitecontact.errors.count, "error") %> prohibited this websitecontact from being saved:</h2>
+
+                <ul>
+                  <% @websitecontact.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :name %><br>
+            <%= f.text_field :name %>
+          </div>
+          <div class="field">
+            <%= f.label :email %><br>
+            <%= f.text_field :email %>
+          </div>
+          <div class="field">
+            <%= f.label :subject %><br>
+            <%= f.text_field :subject %>
+          </div>
+          <div class="field">
+            <%= f.label :message %><br>
+            <%= f.text_area :message %>
+          </div>
+          <% if user_signed_in? %>
+          <div class="field">
+            <%= f.label :recorded %><br>
+            <%= f.check_box :recorded %>
+          </div>
+              <% end %>
+          <div class="actions">
+            <%= f.submit 'Submit', class: "btn btn-sm btn-primary" %>
+          </div>
+      <% end %>
+
+
+
+
+
+
+
+
+
     </div>
   </div>
 </section>

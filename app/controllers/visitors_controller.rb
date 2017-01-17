@@ -13,6 +13,7 @@ class VisitorsController < ApplicationController
     @networkpage = Page.find(7)
     @impactpage = Page.find(10)
     @latestnews = Post.where(on_homepage: true)
+    @websitecontact = Websitecontact.new
 
     @imgArray = ["img_academic.jpg", "img_boysandgirls.jpg", "img_boysinschool.jpg", "img_doctor.jpg", "img_ditch.jpg", "img_crane.jpg", "img_mudhut.jpg", "img_training1.jpg", "img_training2.jpg", "img_tent.jpg", "img_training2.jpg"]
 

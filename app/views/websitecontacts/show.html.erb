@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @websitecontact.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @websitecontact.email %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @websitecontact.subject %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @websitecontact.message %>
+</p>
+
+<p>
+  <strong>Recorded:</strong>
+  <%= @websitecontact.recorded %>
+</p>
+
+<%= link_to 'Edit', edit_websitecontact_path(@websitecontact) %> |
+<%= link_to 'Back', websitecontacts_path %>
