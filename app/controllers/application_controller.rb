@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_locale
-    I18n.locale = params[:locale] if params[:locale].present?
+    I18n.locale = 'en'
     # current_user.locale
     # request.subdomain
     # request.env["HTTP_ACCEPT_LANGUAGE"]
