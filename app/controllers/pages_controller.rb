@@ -10,6 +10,8 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
+    @images = SiteImage.all
+    @imagearray=[1,2,3,4]
   end
 
   # GET /pages/new
@@ -65,6 +67,9 @@ class PagesController < ApplicationController
     end
   end
 
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_page
@@ -73,6 +78,7 @@ class PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
-      params.require(:page).permit(:title, :body, :published, :pagetype_id, :pagelocation)
+      params.require(:page).permit(:title, :body, :published, :pagetype_id, :pagelocation, :image1, :image2, :image3, :image4,
+                                   :imagewidth1, :imagewidth2, :imagewidth3, :imagewidth4)
     end
 end

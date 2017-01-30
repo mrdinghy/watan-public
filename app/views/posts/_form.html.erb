@@ -2,52 +2,44 @@
 
 
   <div class="panel-body">
-<div  class="form-horizontal">
-    <%= form_for @post do |form| %>
 
+    <%= form_for @post do |f| %>
+        <div  class="form-horizontal">
 
 
       <div class="form-group">
-        <%= form.label 'Show on Home Page?', :class => "col-sm-2 control-label" %>
+        <%= f.label 'Show on Home Page?', :class => "col-sm-2 control-label" %>
         <div class="col-sm-10">
 
-          <%= form.check_box :on_homepage %>
+          <%= f.check_box :on_homepage %>
 
         </div>
       </div>
 
 
 
-
       <div class="form-group">
-        <%= form.label :title, :class => "col-sm-2 control-label" %>
+        <label class="col-sm-2 control-label">Title:</label>
         <div class="col-sm-10">
-          <%= form.text_field :title, :class => "form-control" %>
-
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= form.label :body, :class => "col-sm-2 control-label" %>
-        <div class="col-sm-10">
-          <%= form.text_area :body, :id => "postbody", :cols => "100", :rows => "15", :class => "form-control" %>
-
+          <%= f.text_field :title %>
         </div>
       </div>
 
 
 
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Body Section 1:</label>
+        <div class="col-sm-10">
+          <%= f.text_area :body, :id => "postbody" %>
+        </div>
+      </div>
+
 
 
       <div class="form-group">
-        <%= form.label 'Current Logo', :class => "col-sm-2 control-label" %>
-        <div class="col-sm-4">
-          <%= image_tag @post.image.url, :width => "100%", :class => "pull-left" %>
-
-        </div>
-        <%= form.label 'Replace', :class => "col-sm-2 control-label" %>
-        <div class="col-sm-4">
-          <%= form.file_field :image, :class => "form-control" %>
+        <label class="col-sm-2 control-label">Body Section 2:</label>
+        <div class="col-sm-10">
+          <%= f.text_area :body2, :id => "postbody2" %>
         </div>
       </div>
 
@@ -55,19 +47,20 @@
 
 
 
+
       <div class="form-group">
-        <%= form.label :published_at, :class => "col-sm-2 control-label" %>
+        <%= f.label :published_at, :class => "col-sm-2 control-label" %>
         <div class="col-sm-10">
-          <%= form.text_field :published_at, :as => :date_picker, :class => "form-control", :label => false %>
+          <%= f.text_field :published_at, :as => :date_picker, :class => "form-control", :label => false %>
 
         </div>
       </div>
 
       <div class="form-group">
-        <%= form.label 'Is this an event?', :class => "col-sm-2 control-label" %>
+        <%= f.label 'Is this an event?', :class => "col-sm-2 control-label" %>
         <div class="col-sm-10">
 
-            <%= form.check_box :is_event %>
+            <%= f.check_box :is_event %>
 
         </div>
       </div>
@@ -76,35 +69,35 @@
         <h3>Event Info</h3>
 
       <div class="form-group">
-        <%= form.label :event_date, :class => "col-sm-2 control-label" %>
+        <%= f.label :event_date, :class => "col-sm-2 control-label" %>
         <div class="col-sm-4">
-          <%= form.text_field :event_date, :as => :date_picker, :class => "form-control", :label => false %>
+          <%= f.text_field :event_date, :as => :date_picker, :class => "form-control", :label => false %>
 
         </div>
-        <%= form.label 'Time', :class => "col-sm-2 control-label" %>
+        <%= f.label 'Time', :class => "col-sm-2 control-label" %>
         <div class="col-sm-4">
-          <%= form.time_select :event_time, :class => "form-control", :label => false %>
+          <%= f.time_select :event_time, :class => "form-control", :label => false %>
 
         </div>
       </div>
 
 
       <div class="form-group">
-        <%= form.label 'Location', :class => "col-sm-2 control-label" %>
+        <%= f.label 'Location', :class => "col-sm-2 control-label" %>
         <div class="col-sm-4">
-          <%= form.text_field :event_location, :class => "form-control", :label => false %>
+          <%= f.text_field :event_location, :class => "form-control", :label => false %>
 
         </div>
-        <%= form.label 'Event Link', :class => "col-sm-2 control-label" %>
+        <%= f.label 'Event Link', :class => "col-sm-2 control-label" %>
         <div class="col-sm-4">
-          <%= form.text_field :event_link, :class => "form-control", :label => false %>
+          <%= f.text_field :event_link, :class => "form-control", :label => false %>
 
         </div>
       </div>
 
 </div>
       <div class="form-group">
-        <%= form.label 'Watan Programs', :class => "col-sm-2 control-label" %>
+        <%= f.label 'Watan Programs', :class => "col-sm-2 control-label" %>
         <div class="col-sm-4">
           <%= hidden_field_tag "post[watanprogram_ids][]", nil %>
           <% Watanprogram.all.each do |program| %>
@@ -115,17 +108,7 @@
 
 
         </div>
-        <%= form.label 'Institutes', :class => "col-sm-2 control-label" %>
-        <div class="col-sm-4">
-          <%= hidden_field_tag "post[institute_ids][]", nil %>
-          <% Institute.all.each do |institute| %>
-              <%= check_box_tag "post[institute_ids][]", institute.id,
-                                @post.institute_ids.include?(institute.id), id: dom_id(institute) %>
-              <%= label_tag dom_id(institute), institute.name %><br>
-          <% end %>
 
-
-        </div>
       </div>
 
 
@@ -134,21 +117,31 @@
       <div class="form-group">
         <div class = "col-sm-2 control-label">
         <div class="col-sm-10">
-          <%= form.submit :class => "btn btn-small btn-primary" %>
+          <%= f.submit :class => "btn btn-small btn-primary" %>
 
         </div>
       </div>
 
 
 
-        ...
+      </div>      ...
     <% end %>
     </div>
-    </div>
 
-<script>
 
-    $(function() {
-        $('#postbody').froalaEditor()
-    });
-</script>
+
+
+    <script>
+
+
+
+        $(function() {
+            $('#postbody, #postbody2').froalaEditor({
+                toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', 'insertHR', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
+                heightMin: 100,
+                heightMax: 600
+            })
+        });
+
+
+    </script>

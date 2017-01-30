@@ -11,30 +11,48 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
 
-
-    <div class="form-group">
-      <label class="col-sm-2 control-label">Description</label>
+    <div class="field">
+      <label class="col-sm-2 control-label">Name:</label>
       <div class="col-sm-10">
-        <%= f.text_area :body, :id => "prgmblurb", :cols => "100", :rows => "15" %>
-
+        <%= f.text_field :name %>
       </div>
     </div>
 
 
-    <div class="form-group">
-      <%= f.label 'Program Logo', :class => "col-sm-2 control-label" %>
-      <div class="col-sm-4">
-        <%= image_tag @watanprogram.image.url, :width => "100%", :class => "pull-left" %>
 
+    <div class="field">
+      <label class="col-sm-2 control-label">Body Section 1:</label>
+      <div class="col-sm-10">
+        <%= f.text_area :body, :id => "programbody" %>
       </div>
-      <%= f.label 'Replace', :class => "col-sm-2 control-label" %>
-      <div class="col-sm-4">
-        <%= f.file_field :image, :class => "form-control" %>
+    </div>
+
+
+
+    <div class="field">
+      <label class="col-sm-2 control-label">Body Section 2:</label>
+      <div class="col-sm-10">
+        <%= f.text_area :body2, :id => "programbody2" %>
+      </div>
+    </div>
+
+
+    <div class="field">
+      <label class="col-sm-2 control-label">Body Section 3:</label>
+      <div class="col-sm-10">
+        <%= f.text_area :body3, :id => "programbody3" %>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="field">
+      <label class="col-sm-2 control-label">Locations of Intervention:</label>
+      <div class="col-sm-10">
+        <%= f.text_area :locations, :id => "locations" %>
       </div>
     </div>
 
@@ -43,13 +61,22 @@
 
 
     <div class="actions">
-    <%= f.submit %>
+      <%= f.submit class: "btn btn-small btn-primary" %>
   </div>
 <% end %>
 
+
 <script>
 
+
+
     $(function() {
-        $('#prgmblurb').froalaEditor()
+        $('#programbody, #programbody2, #programbody3, #locations').froalaEditor({
+            toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', 'insertHR', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
+            heightMin: 100,
+            heightMax: 600
+        })
     });
+
+
 </script>

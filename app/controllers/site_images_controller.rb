@@ -26,22 +26,12 @@ class SiteImagesController < ApplicationController
   def create
      @site_image = SiteImage.new(site_image_params)
 
-    itype = @site_image.imageable_type
-    iid = @site_image.imageable_id
-    if itype == 'post'
-      i = Post.find(iid)
-    elsif dtype == 'product'
-      i = Product.find(iid)
-    elsif dtype == 'feature'
-      i = Feature.find(iid)
-    end
-
 
     respond_to do |format|
       if @site_image.save
 
                 
-        format.html { redirect_to i, notice: 'Site image was successfully created.' }
+        format.html { redirect_to site_images_path, notice: 'Site image was successfully created.' }
         format.json { render :show, status: :created, location: @site_image }
       else
         format.html { render :new }
@@ -56,11 +46,9 @@ class SiteImagesController < ApplicationController
 
 
 
-
-
     respond_to do |format|
       if @site_image.update(site_image_params)
-        format.html { redirect_to @site_image, notice: 'Site image was successfully updated.' }
+        format.html { redirect_to site_images_path, notice: 'Site image was successfully updated.' }
         format.json { render :show, status: :ok, location: @site_image }
       else
         format.html { render :edit }
@@ -87,6 +75,6 @@ class SiteImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def site_image_params
-      params.require(:site_image).permit(:name, :imageable_type, :imageable_id, :image)
+      params.require(:site_image).permit(:name, :imageable_type, :imageable_id, :image, :caption, :image_source)
     end
 end

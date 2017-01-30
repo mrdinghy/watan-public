@@ -1,7 +1,12 @@
 class Post < ActiveRecord::Base
-  translates :title, :body
+  translates :title, :body, :body2
   has_many :site_documents
   has_many :site_images
+
+  belongs_to :site_image, :foreign_key => :image1_id
+  belongs_to :site_image, :foreign_key => :image2_id
+  belongs_to :site_image, :foreign_key => :image3_id
+
 
 
   has_many :institutes_posts, :dependent => :destroy

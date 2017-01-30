@@ -11,16 +11,42 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
+
     <div class="field">
-      <label class="col-sm-2 control-label">Body:</label>
+      <label class="col-sm-2 control-label">Title:</label>
+      <div class="col-sm-10">
+        <%= f.text_field :title %>
+      </div>
+    </div>
+
+
+
+    <div class="field">
+      <label class="col-sm-2 control-label">Body Section 1:</label>
       <div class="col-sm-10">
         <%= f.text_area :body, :id => "pagebody" %>
       </div>
     </div>
+
+
+
+    <div class="field">
+      <label class="col-sm-2 control-label">Body Section 2:</label>
+      <div class="col-sm-10">
+        <%= f.text_area :body2, :id => "pagebody2" %>
+      </div>
+    </div>
+
+
+    <div class="field">
+      <label class="col-sm-2 control-label">Body Section 3:</label>
+      <div class="col-sm-10">
+        <%= f.text_area :body3, :id => "pagebody3" %>
+      </div>
+    </div>
+
+
+
 
 
 
@@ -32,9 +58,34 @@
 
 
     <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-small btn-primary" %>
   </div>
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -45,30 +96,12 @@
 
 
     $(function() {
-        $('#pagebody').froalaEditor({
+        $('#pagebody, #pagebody2, #pagebody3').froalaEditor({
             toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', 'insertHR', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'],
             heightMin: 100,
             heightMax: 600
         })
     });
-    $(function() {
-        $.FroalaEditor.DefineIcon('imageInfo', {NAME: 'info'});
-        $.FroalaEditor.RegisterCommand('imageInfo', {
-            title: 'Info',
-            focus: false,
-            undo: false,
-            refreshAfterCallback: false,
-            callback: function () {
-                var $img = this.image.get();
-                alert($img.attr('src'));
-            }
-        });
 
-        $('#pagebody').froalaEditor({
-            // Set image buttons, including the name
-            // of the buttons defined in customImageButtons.
-            imageEditButtons: ['imageDisplay', 'imageAlign', 'imageInfo', 'imageRemove']
-        })
-    });
 
 </script>

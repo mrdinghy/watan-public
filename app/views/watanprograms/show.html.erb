@@ -1,45 +1,274 @@
 
+<style>
+    .modal-selectimg {
+        width: 1200px;
+    }
+    .imgselect {
+        max-height: 85px;
+    }
 
+.benihead {
+    color: #fff;
+    font-weight: bold;
+}
+    .imgradio {
+        border: 1px solid #000;
+        border-radius: 50%;
+        margin: 0 0.5em;
+        width: 1.5em;
+        height: 1.5em;
+        background-color: #ffa;
+    }
+
+    .programtitle {
+        margin-top: 0px;
+    }
+
+</style>
 
 <div class="container">
   <p id="notice"><%= notice %></p>
   <!-- Page Heading/Breadcrumbs -->
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header"><%= @watanprogram.name %>
-        <small></small>
-      </h1>
+      <small>WATAN Program</small>
+      <h1 class="page-header programtitle"><%= @watanprogram.name %></h1>
     </div>
   </div>
   <!-- /.row -->
-
-  <!-- Content Row -->
   <div class="row">
-
-    <!-- Blog Post Content Column -->
-    <div class="col-lg-7">
+  <div class="col-md-9">
 
 
 
+  <p>
+    <% if !@watanprogram.image1.nil? && @watanprogram.image1 != 0 %>
+        <% if @watanprogram.imagewidth1.nil? %>
+            <% iwidth="100%" %>
+        <% else %>
+            <% iwidth= @watanprogram.imagewidth1 %>
+        <% end %>
+        <% image1 = SiteImage.find(@watanprogram.image1) if @watanprogram.image1 %>
+        <%= image_tag image1.image.url, width: iwidth %>
+    <% end %>
+    <% if user_signed_in? %>
+    <%= link_to '#image1modal', 'data-toggle' => 'modal', :class => "btn btn-small btn-primary" do %>Add/Change Image<% end %>
+    <% end %>
+        </p>
+
+  <p><%= @watanprogram.body.html_safe if @watanprogram.body %></p>
+
+  <p>
+    <% if !@watanprogram.image2.nil? && @watanprogram.image2 != 0 %>
+        <% if @watanprogram.imagewidth2.nil? %>
+            <% iwidth="100%" %>
+        <% else %>
+            <% iwidth= @watanprogram.imagewidth2 %>
+        <% end %>
+        <% image2 = SiteImage.find(@watanprogram.image2) if @watanprogram.image2 %>
+        <%= image_tag image2.image.url, width: iwidth %>
+    <% end %>
+    <% if user_signed_in? %>
+    <%= link_to '#image2modal', 'data-toggle' => 'modal', :class => "btn btn-small btn-primary" do %>Add/Change Image<% end %>
+    <% end %>
+        </p>
 
 
-      <%#= image_tag @watanprogram.image.url, :width => "100%", :class => "pull-left" %>
+  <p><%= @watanprogram.body2.html_safe if @watanprogram.body2 %></p>
+
+  <p>
+    <% if !@watanprogram.image3.nil? && @watanprogram.image3 != 0 %>
+        <% if @watanprogram.imagewidth3.nil? %>
+            <% iwidth="100%" %>
+        <% else %>
+            <% iwidth= @watanprogram.imagewidth3 %>
+        <% end %>
+        <% image3 = SiteImage.find(@watanprogram.image3) if @watanprogram.image3 %>
+        <%= image_tag image3.image.url, width: iwidth %>
+    <% end %>
+    <% if user_signed_in? %>
+    <%= link_to '#image3modal', 'data-toggle' => 'modal', :class => "btn btn-small btn-primary" do %>Add/Change Image<% end %>
+    <% end %>
+        </p>
 
 
-<p>
+  <p><%= @watanprogram.body3.html_safe if @watanprogram.body3 %></p>
 
-  <%= @watanprogram.body.html_safe if @watanprogram.body %>
-</p>
+  <p>
+    <% if !@watanprogram.image4.nil? && @watanprogram.image4 != 0 %>
+        <% if @watanprogram.imagewidth4.nil? %>
+            <% iwidth="100%" %>
+        <% else %>
+            <% iwidth= @watanprogram.imagewidth4 %>
+        <% end %>
+        <% image4 = SiteImage.find(@watanprogram.image4) if @watanprogram.image2 %>
+        <%= image_tag image4.image.url, width: iwidth %>
+    <% end %>
+    <% if user_signed_in? %>
+    <%= link_to '#image4modal', 'data-toggle' => 'modal', :class => "btn btn-small btn-primary" do %>Add/Change Image<% end %>
+        <% end %>
+  </p>
+
+    --------------------
+
+
       <% if user_signed_in? %>
 <%= link_to 'Edit', edit_watanprogram_path(@watanprogram) %> |
           <% end %>
 <%= link_to 'Back', watanprograms_path %>
 </div>
 
+<div class="col-md-3">
+<h3>Number of <%= @watanprogram.name %> Beneficiaries</h3>
+
+<table class="table">
+  <thead>
+  <td class="watandarkgray benihead">Year</td>
+  <td  class="watandarkgray benihead" style="text-align: right">Count</td>
+  </thead>
+  <tbody>
+  <% @mybenis.each do |b| %>
+  <tr>
+    <td><%= b.calcyear %></td>
+
+    <td style="text-align: right"><%= number_with_delimiter(b.calccount) %></td>
+  </tr>
 
 
 
 
 
-  </div>
+  <% end %>
+
+  <tr>
+    <td class="watanlightgray benihead"><strong>Total</strong></td>
+    <td  class="watanlightgray benihead" style="text-align: right"><%= number_with_delimiter(@totbenis) %></td>
+
+  </tr>
+
+
+
+  </tbody>
+
+</table>
+
+
+  <h3>Locations of <%= @watanprogram.name %> Intervention</h3>
+
+  <%= raw(@watanprogram.locations) %>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+</div>
+
+
+
+<% @imagearray.each do |i| %>
+    <% mname = 'image' + i.to_s + 'modal' %>
+    <div class="modal fade" id="<%= mname %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-selectimg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+            <h2 class="modal-title" id="myModalLabel"><%= mname %></h2>
+            <h3>Select Image for this section or click "No Image"</h3>
+
+
+          </div>
+          <div class="modal-body">
+            <%#= simple_form_for(@submission) do |f| %>
+
+
+            <%= form_for(@watanprogram) do |f| %>
+                <%= hidden_field_tag "imagenumber", i %>
+
+                <div class="actions">
+                  <%= f.submit class: "btn btn-default pull-right" %>
+                </div>
+
+
+
+
+                Width of Image (in pixels )
+                <% if i == 1 %>
+                    <%= f.number_field :imagewidth1, value:  @watanprogram.imagewidth1 %>
+                <% elsif i == 2 %>
+                    <%= f.number_field :imagewidth2, value:  @watanprogram.imagewidth2 %>
+                <% elsif i == 3 %>
+                    <%= f.number_field :imagewidth3, value:  @watanprogram.imagewidth3 %>
+                <% elsif i == 4 %>
+                    <%= f.number_field :imagewidth4, value:  @watanprogram.imagewidth4 %>
+                <% end %>
+
+
+                <div class="row">
+
+                  <% if i == 1  %>
+                      <%= f.radio_button :image1, 0, :checked => (@watanprogram.image1.nil? ), class: "imgradio" %>
+                  <% elsif i == 2 %>
+                      <%= f.radio_button :image2, 0, :checked => (@watanprogram.image2.nil? ), class: "imgradio" %>
+                  <% elsif i == 3  %>
+                      <%= f.radio_button :image3, 0, :checked => (@watanprogram.image3.nil? ), class: "imgradio" %>
+                  <% elsif i == 4  %>
+                      <%= f.radio_button :image4, 0, :checked => (@watanprogram.image4.nil? ), class: "imgradio" %>
+                  <% end %>
+                  No image
+                  <br><br>
+                  <hr>
+
+
+
+
+                  <% @images.each do |img| %>
+                      <div class="col-md-4">
+                        <div class="col-md-6">
+                          <div style="border: #666 solid 5px">
+                            <%= image_tag img.image.url, class: "imgselect" %>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <%= img.name %>
+
+                          <% if i == 1 %>
+                              <%= f.radio_button :image1, img.id, class: "imgradio" %>
+                          <% elsif i == 2 %>
+                              <%= f.radio_button :image2, img.id,  class: "imgradio" %>
+                          <% elsif i == 3 %>
+                              <%= f.radio_button :image3, img.id,  class: "imgradio" %>
+                          <% elsif i == 4 %>
+                              <%= f.radio_button :image4, img.id,  class: "imgradio" %>
+                          <% end %>
+
+
+                        </div>
+                      </div>
+
+
+                  <% end %>
+                </div>
+
+
+
+            <% end %>
+
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
     </div>
+<% end %>

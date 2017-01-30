@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :beneficiaries
   resources :websitecontacts
   resources :countries
   resources :details
@@ -45,6 +46,7 @@ Rails.application.routes.draw do
   get 'sada', to: 'sada#index', as: 'sada'
   get 'syan', to: 'syan#index', as: 'syan'
   get 'dirisat', to: 'dirisat#index', as: 'dirisat'
+  post 'updatepageimage', to: 'pages#updatepageimage', as: 'updatepageimage'
 
-
+  get 'addbenis', to: 'watanprograms#loadbenis', as: 'addbenis'
 end

@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @images = SiteImage.all
     @postdocuments = SiteDocument.where('documentable_type = ? and documentable_id = ?', 'post', @post.id)
     @new_site_document = SiteDocument.new
 
@@ -20,8 +21,10 @@ class PostsController < ApplicationController
     @comments = Comment.where('commentable_type = ? and commentable_id = ?', 'Post', @post.id).order('created_at desc')
     @new_comment = Comment.new
 
+    @imagearray=[1,2,3,4]
+
     @postprograms = PostsWatanprogram.where('post_id =?', @post.id )
-    @postinstitutes = InstitutesPost.where('post_id =?', @post.id )
+
     programids = @postprograms.pluck(:watanprogram_id)
     @relatedposts = PostsWatanprogram.where(watanprogram_id: :programids).where.not(post_id: @post.id)
   end
@@ -104,7 +107,9 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :published, :start_date, :end_date, :post_type, :image, :is_event, :on_homepage,
-                                   :event_date, :event_time, :event_location, :event_link, watanprogram_ids: [], institute_ids: [])
+      params.require(:post).permit(:title, :body, :body2, :published, :start_date, :end_date, :post_type, :image, :is_event, :on_homepage,
+                                   :event_date, :event_time, :event_location, :event_link, :image1, :image2, :image3, :imagewidth1, :imagewidth2, :imagewidth3,
+                                   watanprogram_ids: [], institute_ids: [],
+                                    )
     end
 end

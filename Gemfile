@@ -23,6 +23,7 @@ gem 'globalize', '~> 5.0.0'
 gem 'globalize-accessors'
 gem 'shareable'
 gem "wysiwyg-rails"
+gem "seed_dump"
 gem 'therubyracer'
 gem 'seed_dump'
 group :development, :test do

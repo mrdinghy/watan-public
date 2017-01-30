@@ -16,7 +16,6 @@ display: inline;
 </section>--->
 
 
-
 <section id="about" class="main-container">
   <br><br>  <br><br>
 <%= render :partial => 'visitors/about' %>
@@ -44,3 +43,14 @@ display: inline;
 
 
 <p><%#= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+
+<script>
+var myFunc = function() {
+baguetteBox.run('.step_div');
+};
+
+$(document).ready(myFunc);
+$(document).on('page:load', myFunc); // Classic Turbolinks
+$(document).on('turbolinks:load', myFunc); // Turbolinks 5
+
+</script>
