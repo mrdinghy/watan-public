@@ -1,4 +1,4 @@
-class AddColBody2ToWatanPrograms < ActiveRecord::Migration
+class AddColBody2ToWatanprograms < ActiveRecord::Migration
   def change
     reversible do |dir|
       dir.up do
